@@ -42,15 +42,15 @@
   --primary-hover: #1E4AE6;
   --primary-pressed: #1A3FC2;
   --primary-soft: #E8EEFF;
-  --primary-tint: #F0F4FF;
+  --primary-tint: #F4F7FF;
   --bg: #F7F9FC;
   --surface: #FFFFFF;
-  --surface-2: #EEF2F7;
+  --surface-2: #F1F4F9;
   --surface-3: #E5EAF2;
-  --border: #E2E8F0;
+  --border: #E5E9F0;
   --border-strong: #CBD5E1;
-  --text-primary: #0F172A;
-  --text-secondary: #475569;
+  --text-primary: #0B1224;
+  --text-secondary: #4A5568;
   --text-muted: #94A3B8;
   --text-inverse: #FFFFFF;
   --success: #16A34A;
@@ -62,13 +62,14 @@
   --risk: #F87171;
   --risk-soft: #FEE2E2;
   --risk-dark: #DC2626;
-  --shadow-xs: 0 1px 2px rgba(30, 42, 90, 0.04);
-  --shadow-sm: 0 2px 8px rgba(30, 42, 90, 0.06), 0 1px 2px rgba(30, 42, 90, 0.04);
-  --shadow-md: 0 8px 24px -6px rgba(30, 42, 90, 0.10), 0 2px 6px -2px rgba(30, 42, 90, 0.05);
-  --shadow-lg: 0 24px 48px -16px rgba(30, 42, 90, 0.18), 0 8px 16px -8px rgba(30, 42, 90, 0.08);
-  --shadow-xl: 0 40px 80px -24px rgba(30, 42, 90, 0.24), 0 16px 32px -12px rgba(30, 42, 90, 0.10);
-  --shadow-glow: 0 0 40px rgba(47, 91, 255, 0.20);
-  --shadow-glow-strong: 0 12px 48px -8px rgba(47, 91, 255, 0.35);
+  --shadow-xs: 0 1px 2px rgba(15, 23, 50, 0.04);
+  --shadow-sm: 0 1px 3px rgba(15, 23, 50, 0.05), 0 1px 2px rgba(15, 23, 50, 0.03);
+  --shadow-md: 0 4px 12px -2px rgba(15, 23, 50, 0.08), 0 2px 4px -2px rgba(15, 23, 50, 0.04);
+  --shadow-lg: 0 16px 40px -12px rgba(15, 23, 50, 0.16), 0 6px 12px -6px rgba(15, 23, 50, 0.08);
+  --shadow-xl: 0 32px 64px -20px rgba(15, 23, 50, 0.22), 0 12px 24px -10px rgba(15, 23, 50, 0.10);
+  --shadow-glow: 0 0 0 1px rgba(47, 91, 255, 0.10), 0 8px 24px -4px rgba(47, 91, 255, 0.22);
+  --shadow-glow-strong: 0 0 0 1px rgba(47, 91, 255, 0.16), 0 16px 48px -8px rgba(47, 91, 255, 0.34);
+  --shadow-inset: inset 0 1px 0 rgba(255, 255, 255, 0.06);
   --radius-xs: 6px;
   --radius-sm: 10px;
   --radius-md: 14px;
@@ -79,7 +80,7 @@
   --ease: cubic-bezier(0.4, 0, 0.2, 1);
   --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
   --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
-  --container: 1200px;
+  --container: 1180px;
   --container-narrow: 880px;
 }
 *, *::before, *::after { box-sizing: border-box; }
@@ -108,15 +109,24 @@ input, textarea, select { font: inherit; color: inherit; }
 h1, h2, h3, h4, h5 {
   font-family: 'Manrope', -apple-system, BlinkMacSystemFont, sans-serif;
   font-weight: 700;
-  line-height: 1.12;
-  letter-spacing: -0.025em;
+  line-height: 1.08;
+  letter-spacing: -0.028em;
   color: var(--deep-blue);
 }
-h1 { font-size: clamp(2.25rem, 6vw, 3.75rem); font-weight: 800; }
-h2 { font-size: clamp(1.75rem, 4vw, 2.75rem); }
-h3 { font-size: clamp(1.25rem, 2.5vw, 1.625rem); font-weight: 700; }
-h4 { font-size: 1.125rem; font-weight: 600; }
+h1 { font-size: clamp(2.5rem, 7vw, 4.5rem); font-weight: 800; letter-spacing: -0.035em; }
+h2 { font-size: clamp(1.875rem, 4.5vw, 3rem); letter-spacing: -0.03em; }
+h3 { font-size: clamp(1.25rem, 2.5vw, 1.625rem); font-weight: 700; letter-spacing: -0.02em; }
+h4 { font-size: 1.125rem; font-weight: 600; letter-spacing: -0.015em; }
 p { color: var(--text-secondary); }
+.reveal { opacity: 0; transform: translateY(20px); transition: opacity 0.7s var(--ease-out), transform 0.7s var(--ease-out); }
+.reveal.in { opacity: 1; transform: translateY(0); }
+.stagger > * { opacity: 0; transform: translateY(16px); transition: opacity 0.6s var(--ease-out), transform 0.6s var(--ease-out); }
+.stagger.in > *:nth-child(1) { opacity: 1; transform: translateY(0); transition-delay: 0.05s; }
+.stagger.in > *:nth-child(2) { opacity: 1; transform: translateY(0); transition-delay: 0.12s; }
+.stagger.in > *:nth-child(3) { opacity: 1; transform: translateY(0); transition-delay: 0.19s; }
+.stagger.in > *:nth-child(4) { opacity: 1; transform: translateY(0); transition-delay: 0.26s; }
+.stagger.in > *:nth-child(5) { opacity: 1; transform: translateY(0); transition-delay: 0.33s; }
+.stagger.in > *:nth-child(6) { opacity: 1; transform: translateY(0); transition-delay: 0.4s; }
 
 .container {
   width: 100%;
@@ -191,12 +201,23 @@ section { padding: 80px 0; position: relative; }
 }
 .btn:active { transform: translateY(1px); }
 .btn-primary {
-  background: var(--primary);
+  background: linear-gradient(180deg, var(--primary) 0%, var(--primary-hover) 100%);
   color: var(--text-inverse);
-  box-shadow: 0 4px 12px rgba(47, 91, 255, 0.30), 0 1px 3px rgba(47, 91, 255, 0.20);
+  box-shadow: 0 4px 12px rgba(47, 91, 255, 0.32), 0 1px 3px rgba(47, 91, 255, 0.22), inset 0 1px 0 rgba(255,255,255,0.12);
+  position: relative;
+  overflow: hidden;
 }
-.btn-primary:hover { background: var(--primary-hover); box-shadow: 0 8px 20px rgba(47, 91, 255, 0.36), 0 2px 6px rgba(47, 91, 255, 0.24); transform: translateY(-1px); }
-.btn-primary:active { background: var(--primary-pressed); transform: translateY(0); }
+.btn-primary::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(255,255,255,0.14) 0%, transparent 50%);
+  opacity: 0;
+  transition: opacity 0.2s var(--ease);
+}
+.btn-primary:hover { background: linear-gradient(180deg, var(--primary-hover) 0%, var(--primary-pressed) 100%); box-shadow: 0 8px 24px rgba(47, 91, 255, 0.40), 0 2px 6px rgba(47, 91, 255, 0.26), inset 0 1px 0 rgba(255,255,255,0.18); transform: translateY(-1px); }
+.btn-primary:hover::before { opacity: 1; }
+.btn-primary:active { background: var(--primary-pressed); transform: translateY(0); box-shadow: 0 2px 6px rgba(47, 91, 255, 0.30); }
 .btn-secondary {
   background: var(--surface);
   color: var(--deep-blue);
@@ -222,14 +243,14 @@ header.nav {
   position: sticky;
   top: 0;
   z-index: 50;
-  background: rgba(247, 249, 252, 0.85);
-  backdrop-filter: blur(16px) saturate(180%);
-  -webkit-backdrop-filter: blur(16px) saturate(180%);
+  background: rgba(247, 249, 252, 0.72);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
   border-bottom: 1px solid transparent;
   transition: border-color 0.2s var(--ease), background 0.2s var(--ease);
 }
 header.nav.scrolled {
-  background: rgba(247, 249, 252, 0.92);
+  background: rgba(247, 249, 252, 0.88);
   border-bottom-color: var(--border);
 }
 .nav-inner {
@@ -257,58 +278,64 @@ header.nav.scrolled {
 
 /* HERO */
 .hero {
-  background: linear-gradient(160deg, #1E2A5A 0%, #2A3A78 55%, #1E2A5A 100%);
+  background: #0F1832;
   color: white;
-  padding: 80px 0 96px;
+  padding: 88px 0 96px;
   position: relative;
   overflow: hidden;
+  isolation: isolate;
 }
-@media (min-width: 768px) { .hero { padding: 120px 0 140px; } }
+@media (min-width: 768px) { .hero { padding: 128px 0 144px; } }
 .hero::before {
   content: '';
   position: absolute;
   inset: 0;
   background:
-    radial-gradient(ellipse 70% 50% at 50% 0%, rgba(47, 91, 255, 0.30) 0%, transparent 60%),
-    radial-gradient(ellipse 50% 40% at 100% 100%, rgba(47, 91, 255, 0.15) 0%, transparent 70%);
+    radial-gradient(ellipse 80% 55% at 50% 0%, rgba(47, 91, 255, 0.32) 0%, transparent 65%),
+    radial-gradient(ellipse 60% 40% at 88% 110%, rgba(47, 91, 255, 0.18) 0%, transparent 70%),
+    linear-gradient(180deg, #0F1832 0%, #1A2354 55%, #0F1832 100%);
   pointer-events: none;
+  z-index: -2;
 }
 .hero::after {
   content: '';
   position: absolute;
   inset: 0;
   background-image:
-    linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
-  background-size: 56px 56px;
-  background-position: -1px -1px;
-  mask-image: radial-gradient(ellipse 70% 60% at 50% 30%, black, transparent 75%);
-  -webkit-mask-image: radial-gradient(ellipse 70% 60% at 50% 30%, black, transparent 75%);
+    linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px);
+  background-size: 64px 64px;
+  background-position: center;
+  mask-image: radial-gradient(ellipse 65% 55% at 50% 30%, black, transparent 78%);
+  -webkit-mask-image: radial-gradient(ellipse 65% 55% at 50% 30%, black, transparent 78%);
   pointer-events: none;
+  z-index: -1;
 }
 .hero-inner { position: relative; z-index: 2; text-align: center; }
 .hero h1 {
   color: #FFFFFF;
-  margin-bottom: 24px;
-  background: linear-gradient(180deg, #FFFFFF 30%, #C8D2FF 100%);
+  margin-bottom: 28px;
+  background: linear-gradient(180deg, #FFFFFF 0%, #FFFFFF 40%, #B8C5F0 100%);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
-  animation: fadeUp 0.7s var(--ease-out) both;
+  animation: fadeUp 0.8s var(--ease-out) both;
 }
 .hero h1 .accent {
-  background: linear-gradient(180deg, #6B8AFF 0%, #2F5BFF 100%);
+  background: linear-gradient(180deg, #7B96FF 0%, #2F5BFF 100%);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
   white-space: nowrap;
+  position: relative;
 }
 .hero-sub {
-  color: #C8D2FF;
+  color: rgba(200, 210, 255, 0.85);
   font-size: 1.125rem;
-  max-width: 600px;
-  margin: 0 auto 36px;
-  animation: fadeUp 0.7s 0.1s var(--ease-out) both;
+  max-width: 620px;
+  margin: 0 auto 40px;
+  line-height: 1.55;
+  animation: fadeUp 0.8s 0.1s var(--ease-out) both;
 }
 @media (min-width: 768px) { .hero-sub { font-size: 1.25rem; } }
 .hero-ctas {
@@ -317,50 +344,70 @@ header.nav.scrolled {
   gap: 12px;
   align-items: center;
   justify-content: center;
-  margin-bottom: 24px;
-  animation: fadeUp 0.7s 0.2s var(--ease-out) both;
+  margin-bottom: 28px;
+  animation: fadeUp 0.8s 0.2s var(--ease-out) both;
 }
 @media (min-width: 540px) { .hero-ctas { flex-direction: row; } }
 .hero-ctas .btn { min-width: 220px; }
 .hero-trust-line {
   font-size: 0.875rem;
-  color: rgba(255,255,255,0.65);
-  margin-bottom: 56px;
-  animation: fadeUp 0.7s 0.3s var(--ease-out) both;
+  color: rgba(255,255,255,0.55);
+  margin-bottom: 64px;
+  animation: fadeUp 0.8s 0.3s var(--ease-out) both;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
 }
+.hero-trust-line svg { opacity: 0.7; }
 .hero-stats {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 12px;
-  max-width: 800px;
+  max-width: 820px;
   margin: 0 auto;
-  animation: fadeUp 0.7s 0.4s var(--ease-out) both;
+  animation: fadeUp 0.8s 0.4s var(--ease-out) both;
 }
 @media (min-width: 640px) { .hero-stats { gap: 16px; } }
 .hero-stat {
-  background: rgba(255,255,255,0.06);
+  background: linear-gradient(180deg, rgba(255,255,255,0.08) 0%, rgba(255,255,255,0.03) 100%);
   border: 1px solid rgba(255,255,255,0.10);
-  backdrop-filter: blur(12px);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
   border-radius: var(--radius-lg);
-  padding: 20px 16px;
-  text-align: center;
+  padding: 24px 16px;
+  text-align: left;
+  transition: transform 0.25s var(--ease), border-color 0.25s var(--ease), background 0.25s var(--ease);
+  box-shadow: var(--shadow-inset);
 }
-@media (min-width: 640px) { .hero-stat { padding: 28px 20px; } }
+@media (min-width: 640px) { .hero-stat { padding: 28px 24px; } }
+.hero-stat:hover { transform: translateY(-2px); border-color: rgba(123, 150, 255, 0.30); background: linear-gradient(180deg, rgba(255,255,255,0.10) 0%, rgba(255,255,255,0.04) 100%); }
+.hero-stat-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  background: linear-gradient(135deg, rgba(47, 91, 255, 0.20), rgba(123, 150, 255, 0.10));
+  color: #B8C5F0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 14px;
+}
 .hero-stat-value {
   font-family: 'Manrope', sans-serif;
   font-weight: 800;
   font-size: clamp(1.5rem, 4vw, 2.25rem);
   color: white;
-  letter-spacing: -0.02em;
+  letter-spacing: -0.03em;
   margin-bottom: 4px;
   background: linear-gradient(180deg, #FFFFFF 0%, #C8D2FF 100%);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
+  line-height: 1.05;
 }
 .hero-stat-label {
-  font-size: 0.75rem;
-  color: rgba(255,255,255,0.65);
+  font-size: 0.8125rem;
+  color: rgba(255,255,255,0.55);
   line-height: 1.4;
 }
 @media (min-width: 640px) { .hero-stat-label { font-size: 0.875rem; } }
@@ -396,9 +443,10 @@ header.nav.scrolled {
   padding: 28px;
   box-shadow: var(--shadow-sm);
   border: 1px solid var(--border);
-  transition: transform 0.3s var(--ease-out), box-shadow 0.3s var(--ease-out);
+  transition: transform 0.35s var(--ease-out), box-shadow 0.35s var(--ease-out), border-color 0.25s var(--ease);
+  position: relative;
 }
-.myth-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); }
+.myth-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); border-color: var(--border-strong); }
 .myth-eyebrow {
   font-size: 0.75rem;
   font-weight: 600;
@@ -698,18 +746,18 @@ header.nav.scrolled {
   background: var(--surface);
   border: 1.5px solid var(--border);
   border-radius: var(--radius-md);
-  padding: 16px 18px;
+  padding: 18px 20px;
   cursor: pointer;
-  transition: all 0.18s var(--ease);
+  transition: border-color 0.18s var(--ease), background 0.18s var(--ease), box-shadow 0.18s var(--ease), transform 0.18s var(--ease);
   position: relative;
   text-align: left;
   width: 100%;
 }
-.calc-option:hover { border-color: var(--primary); background: var(--primary-tint); transform: translateY(-1px); }
+.calc-option:hover { border-color: var(--primary); background: var(--primary-tint); transform: translateY(-1px); box-shadow: var(--shadow-sm); }
 .calc-option.selected {
   border-color: var(--primary);
   background: var(--primary-soft);
-  box-shadow: 0 0 0 4px rgba(47, 91, 255, 0.08);
+  box-shadow: 0 0 0 4px rgba(47, 91, 255, 0.10), 0 2px 8px rgba(47, 91, 255, 0.06);
 }
 .calc-option.selected::after {
   content: '';
@@ -952,10 +1000,10 @@ header.nav.scrolled {
 .result-screen {
   display: none;
   text-align: center;
-  padding: 40px 24px;
+  padding: 48px 24px 32px;
   animation: scaleIn 0.5s var(--ease-out) both;
 }
-@media (min-width: 640px) { .result-screen { padding: 56px 48px; } }
+@media (min-width: 640px) { .result-screen { padding: 64px 56px 48px; } }
 .result-screen.active { display: block; }
 .result-eyebrow {
   font-size: 0.75rem;
@@ -996,10 +1044,12 @@ header.nav.scrolled {
   font-size: 4rem;
   line-height: 1;
   color: var(--deep-blue);
-  letter-spacing: -0.03em;
+  letter-spacing: -0.04em;
   transition: color 0.4s;
+  font-feature-settings: 'tnum';
+  font-variant-numeric: tabular-nums;
 }
-@media (min-width: 640px) { .score-num { font-size: 4.5rem; } }
+@media (min-width: 640px) { .score-num { font-size: 4.75rem; } }
 .score-max { font-size: 0.875rem; color: var(--text-muted); margin-top: 4px; }
 .score-badge {
   display: inline-block;
@@ -1272,34 +1322,40 @@ header.nav.scrolled {
 .tier-card {
   background: var(--surface);
   border-radius: var(--radius-lg);
-  border: 1.5px solid var(--border);
-  padding: 28px 24px;
+  border: 1px solid var(--border);
+  padding: 32px 28px;
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 18px;
   position: relative;
-  transition: transform 0.3s var(--ease-out), box-shadow 0.3s var(--ease-out);
+  transition: transform 0.35s var(--ease-out), box-shadow 0.35s var(--ease-out), border-color 0.25s var(--ease);
+  box-shadow: var(--shadow-sm);
 }
 .tier-card.featured {
-  border-color: var(--primary);
-  box-shadow: 0 12px 40px -8px rgba(47, 91, 255, 0.20);
+  border-color: transparent;
+  box-shadow: var(--shadow-glow-strong);
   transform: translateY(-8px);
+  background:
+    linear-gradient(var(--surface), var(--surface)) padding-box,
+    linear-gradient(135deg, var(--primary) 0%, #7B96FF 50%, var(--primary) 100%) border-box;
+  border: 1.5px solid transparent;
 }
-.tier-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); }
-.tier-card.featured:hover { transform: translateY(-12px); }
+.tier-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); border-color: var(--border-strong); }
+.tier-card.featured:hover { transform: translateY(-12px); box-shadow: 0 0 0 1px rgba(47, 91, 255, 0.20), 0 24px 56px -8px rgba(47, 91, 255, 0.36); }
 .tier-badge {
   position: absolute;
-  top: -10px;
+  top: -12px;
   left: 50%;
   transform: translateX(-50%);
   background: var(--primary);
   color: white;
-  padding: 4px 14px;
+  padding: 5px 16px;
   border-radius: var(--radius-pill);
   font-size: 0.75rem;
   font-weight: 700;
   letter-spacing: 0.02em;
-  box-shadow: 0 4px 12px rgba(47, 91, 255, 0.30);
+  box-shadow: 0 6px 16px rgba(47, 91, 255, 0.36), 0 0 0 4px var(--bg);
+  white-space: nowrap;
 }
 .tier-name {
   font-size: 0.875rem;
@@ -1369,9 +1425,10 @@ header.nav.scrolled {
   border-radius: var(--radius-md);
   border: 1px solid var(--border);
   overflow: hidden;
-  transition: border-color 0.2s var(--ease), box-shadow 0.2s var(--ease);
+  transition: border-color 0.25s var(--ease), box-shadow 0.25s var(--ease), background 0.25s var(--ease);
 }
-.faq-item.open { border-color: var(--primary); box-shadow: 0 4px 16px rgba(47, 91, 255, 0.08); }
+.faq-item:hover { border-color: var(--border-strong); }
+.faq-item.open { border-color: var(--primary); box-shadow: var(--shadow-glow); background: linear-gradient(180deg, var(--surface) 0%, var(--primary-tint) 200%); }
 .faq-trigger {
   width: 100%;
   text-align: left;
@@ -1458,7 +1515,15 @@ header.nav.scrolled {
 footer {
   background: #0B132E;
   color: rgba(255,255,255,0.75);
-  padding: 56px 0 32px;
+  padding: 72px 0 36px;
+  position: relative;
+}
+footer::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(47, 91, 255, 0.40), transparent);
 }
 .footer-grid {
   display: grid;
@@ -1617,17 +1682,29 @@ footer {
         Telegram
       </button>
     </div>
-    <p class="hero-trust-line">Без регистрации. Без звонков. Без обязательств.</p>
+    <p class="hero-trust-line">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+      Без регистрации. Без звонков. Без обязательств.
+    </p>
     <div class="hero-stats">
       <div class="hero-stat">
+        <div class="hero-stat-icon">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+        </div>
         <div class="hero-stat-value">350 000 ₽</div>
         <div class="hero-stat-label">Максимальный размер контракта</div>
       </div>
       <div class="hero-stat">
+        <div class="hero-stat-icon">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        </div>
         <div class="hero-stat-value">3 мин</div>
         <div class="hero-stat-label">Квалификационный тест</div>
       </div>
       <div class="hero-stat">
+        <div class="hero-stat-icon">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+        </div>
         <div class="hero-stat-value">1,4 млн</div>
         <div class="hero-stat-label">Долг, с которым я получил контракт</div>
       </div>
@@ -1637,12 +1714,12 @@ footer {
 
 <section class="pain" id="pain">
   <div class="container">
-    <div class="section-head">
+    <div class="section-head reveal">
       <span class="section-eyebrow"><span class="dot"></span>Что вы, скорее всего, уже слышали</span>
       <h2>Эти мифы останавливают большинство</h2>
       <p>А зря — каждый из них опровергается практикой и законом</p>
     </div>
-    <div class="pain-grid">
+    <div class="pain-grid stagger">
       <article class="myth-card">
         <div class="myth-eyebrow">Распространённое заблуждение</div>
         <div class="myth-row bad">
@@ -1723,7 +1800,7 @@ footer {
 
 <section class="story" id="story">
   <div class="container">
-    <div class="section-head">
+    <div class="section-head reveal">
       <span class="section-eyebrow"><span class="dot"></span>Почему я разбираюсь в этом</span>
       <h2>Я сам прошёл через это —<br>с 1,4 млн долгом и арестованными счетами</h2>
     </div>
@@ -1778,12 +1855,12 @@ footer {
 
 <section class="how" id="how">
   <div class="container">
-    <div class="section-head">
+    <div class="section-head reveal">
       <span class="section-eyebrow"><span class="dot"></span>Как это работает</span>
       <h2>Три шага от теста до контракта</h2>
       <p>Простой и прозрачный процесс — без бюрократических лабиринтов</p>
     </div>
-    <div class="steps-grid">
+    <div class="steps-grid stagger">
       <div class="step-card">
         <div class="step-number">01</div>
         <h3 class="step-title">Пройдёте тест — узнаете свою оценку</h3>
@@ -1805,7 +1882,7 @@ footer {
 
 <section class="calculator" id="calculator">
   <div class="container">
-    <div class="section-head">
+    <div class="section-head reveal">
       <span class="section-eyebrow"><span class="dot"></span>Бесплатно · Без регистрации · Результат сразу</span>
       <h2>Тест на шансы получения</h2>
       <p>Ответьте на 8 коротких вопросов — мы покажем вашу честную оценку и подходящий путь</p>
@@ -1975,8 +2052,30 @@ footer {
           <div class="result-eyebrow">Ваш результат</div>
           <div class="score-display">
             <svg class="score-ring" viewBox="0 0 200 200">
+              <defs>
+                <linearGradient id="ringGradHigh" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stop-color="#22C55E"/>
+                  <stop offset="100%" stop-color="#16A34A"/>
+                </linearGradient>
+                <linearGradient id="ringGradMedium" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stop-color="#FBBF24"/>
+                  <stop offset="100%" stop-color="#F59E0B"/>
+                </linearGradient>
+                <linearGradient id="ringGradLow" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stop-color="#94A3B8"/>
+                  <stop offset="100%" stop-color="#6B8DB5"/>
+                </linearGradient>
+                <linearGradient id="ringGradComplex" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stop-color="#7B96FF"/>
+                  <stop offset="100%" stop-color="#2F5BFF"/>
+                </linearGradient>
+                <filter id="ringGlow" x="-20%" y="-20%" width="140%" height="140%">
+                  <feGaussianBlur stdDeviation="3" result="blur"/>
+                  <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+                </filter>
+              </defs>
               <circle class="score-ring-bg" cx="100" cy="100" r="90"/>
-              <circle class="score-ring-fg" id="scoreRingFg" cx="100" cy="100" r="90"/>
+              <circle class="score-ring-fg" id="scoreRingFg" cx="100" cy="100" r="90" filter="url(#ringGlow)"/>
             </svg>
             <div class="score-content">
               <div class="score-num" id="scoreNum">0</div>
@@ -2010,12 +2109,12 @@ footer {
 
 <section class="results-section" id="results">
   <div class="container">
-    <div class="section-head">
+    <div class="section-head reveal">
       <span class="section-eyebrow"><span class="dot"></span>Реальные ситуации</span>
       <h2>Истории, в которых сказали «невозможно»</h2>
       <p>Анонимизированные случаи реальных клиентов — с их разрешения</p>
     </div>
-    <div class="results-grid">
+    <div class="results-grid stagger">
       <article class="case-card">
         <span class="case-tag">Московская область · 2024</span>
         <h3 class="case-headline">Долг по ИП 800 000 ₽, арестованный счёт</h3>
@@ -2067,12 +2166,12 @@ footer {
 
 <section class="services" id="services">
   <div class="container">
-    <div class="section-head">
+    <div class="section-head reveal">
       <span class="section-eyebrow"><span class="dot"></span>Что я делаю</span>
       <h2>Услуги</h2>
       <p>Два формата работы — выбирайте по своей ситуации</p>
     </div>
-    <div class="services-grid">
+    <div class="services-grid stagger">
       <div class="service-card">
         <div class="service-icon-wrap">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
@@ -2107,7 +2206,7 @@ footer {
 
 <section class="directions" id="directions">
   <div class="container">
-    <div class="section-head">
+    <div class="section-head reveal">
       <span class="section-eyebrow"><span class="dot"></span>28 направлений</span>
       <h2>Куда можно направить средства</h2>
       <p>Федеральные категории. Региональные приоритеты могут отличаться — это разбираем на консультации.</p>
@@ -2118,12 +2217,12 @@ footer {
 
 <section class="pricing" id="pricing">
   <div class="container">
-    <div class="section-head">
+    <div class="section-head reveal">
       <span class="section-eyebrow"><span class="dot"></span>Прозрачные цены</span>
       <h2>Форматы работы</h2>
       <p>Цена зависит от сложности случая. Точную стоимость называю после оценки.</p>
     </div>
-    <div class="pricing-grid">
+    <div class="pricing-grid stagger">
       <div class="tier-card">
         <span class="tier-name">Бесплатно</span>
         <h3 class="tier-title">Самостоятельно</h3>
@@ -2201,7 +2300,7 @@ footer {
 
 <section class="faq" id="faq">
   <div class="container">
-    <div class="section-head">
+    <div class="section-head reveal">
       <span class="section-eyebrow"><span class="dot"></span>Часто задают</span>
       <h2>Вопросы и честные ответы</h2>
     </div>
@@ -2447,6 +2546,7 @@ function init() {
   buildFaq();
   bindScroll();
   bindStickyCta();
+  bindReveals();
 }
 
 function buildRegionSelect() {
@@ -2883,12 +2983,14 @@ function renderResult() {
   const offset = circumference - (score / 92) * circumference;
 
   badge.className = 'score-badge';
-  let ringColor = 'var(--success)';
-  if (type === 'HIGH') { badge.classList.add('high'); badge.textContent = 'Высокий шанс'; ringColor = '#16A34A'; num.style.color = '#16A34A'; }
-  else if (type === 'MEDIUM') { badge.classList.add('medium'); badge.textContent = 'Шанс есть'; ringColor = '#F59E0B'; num.style.color = '#F59E0B'; }
-  else if (type === 'LOW') { badge.classList.add('low'); badge.textContent = 'Требует стратегии'; ringColor = '#6B8DB5'; num.style.color = '#6B8DB5'; }
-  else if (type === 'COMPLEX') { badge.classList.add('complex'); badge.textContent = 'Нестандартный случай'; ringColor = '#2F5BFF'; num.style.color = '#2F5BFF'; }
-  ringFg.style.stroke = ringColor;
+  let gradId = 'ringGradHigh';
+  let numColor = '#16A34A';
+  if (type === 'HIGH') { badge.classList.add('high'); badge.textContent = 'Высокий шанс'; gradId = 'ringGradHigh'; numColor = '#16A34A'; }
+  else if (type === 'MEDIUM') { badge.classList.add('medium'); badge.textContent = 'Шанс есть'; gradId = 'ringGradMedium'; numColor = '#B45309'; }
+  else if (type === 'LOW') { badge.classList.add('low'); badge.textContent = 'Требует стратегии'; gradId = 'ringGradLow'; numColor = '#6B8DB5'; }
+  else if (type === 'COMPLEX') { badge.classList.add('complex'); badge.textContent = 'Нестандартный случай'; gradId = 'ringGradComplex'; numColor = '#2F5BFF'; }
+  ringFg.setAttribute('stroke', `url(#${gradId})`);
+  num.style.color = numColor;
   ringFg.style.strokeDashoffset = circumference;
   setTimeout(() => { ringFg.style.strokeDashoffset = offset; }, 100);
 
@@ -3061,6 +3163,22 @@ function bindScroll() {
     if (y > 16) nav.classList.add('scrolled'); else nav.classList.remove('scrolled');
     last = y;
   }, { passive: true });
+}
+
+function bindReveals() {
+  if (!('IntersectionObserver' in window)) {
+    $$('.reveal, .stagger').forEach(el => el.classList.add('in'));
+    return;
+  }
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('in');
+        io.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+  $$('.reveal, .stagger').forEach(el => io.observe(el));
 }
 
 function bindStickyCta() {
