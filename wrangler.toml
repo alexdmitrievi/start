@@ -1,0 +1,8 @@
+name = "shanset-tg-proxy"
+main = "workers/telegram-proxy.js"
+compatibility_date = "2025-01-01"
+
+# Secrets (TELEGRAM_BOT_TOKEN, TELEGRAM_CHAT_ID, ALLOWED_ORIGIN)
+# are added manually in the Cloudflare dashboard:
+#   Workers & Pages → shanset-tg-proxy → Settings → Variables and Secrets
+# They are NOT stored in this file by design — keeps secrets out of git.
