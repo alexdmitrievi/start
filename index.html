@@ -690,6 +690,7 @@ section { padding: 80px 0; position: relative; }
   display: flex;
   flex-direction: column;
   gap: 10px;
+  min-height: 220px;
   transition: transform 0.3s var(--ease-out), border-color 0.25s var(--ease), box-shadow 0.3s var(--ease-out);
   position: relative;
 }
@@ -704,12 +705,15 @@ section { padding: 80px 0; position: relative; }
   align-items: center;
   justify-content: center;
   margin-bottom: 4px;
+  flex-shrink: 0;
 }
 .launch-title {
   color: var(--deep-blue);
   font-size: 1rem;
   font-weight: 700;
   font-family: 'Plus Jakarta Sans';
+  letter-spacing: -0.015em;
+  min-height: 2.4em;
 }
 .launch-body {
   font-size: 0.8125rem;
@@ -729,7 +733,7 @@ section { padding: 80px 0; position: relative; }
   font-weight: 700;
   letter-spacing: 0.04em;
   text-transform: uppercase;
-  margin-top: 4px;
+  margin-top: auto;
 }
 
 header.nav {
@@ -913,12 +917,15 @@ header.nav.scrolled {
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
   border-radius: var(--radius-lg);
-  padding: 24px 16px;
+  padding: 22px 18px;
   text-align: left;
+  display: flex;
+  flex-direction: column;
+  min-height: 132px;
   transition: transform 0.25s var(--ease), border-color 0.25s var(--ease), background 0.25s var(--ease);
   box-shadow: var(--shadow-inset);
 }
-@media (min-width: 640px) { .hero-stat { padding: 28px 24px; } }
+@media (min-width: 640px) { .hero-stat { padding: 26px 22px; min-height: 148px; } }
 .hero-stat:hover { transform: translateY(-2px); border-color: rgba(123, 150, 255, 0.30); background: linear-gradient(180deg, rgba(255,255,255,0.10) 0%, rgba(255,255,255,0.04) 100%); }
 .hero-stat-icon {
   width: 36px;
@@ -929,8 +936,10 @@ header.nav.scrolled {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 14px;
+  margin-bottom: auto;
+  flex-shrink: 0;
 }
+.hero-stat-value { margin-top: 14px; }
 .hero-stat-value {
   font-family: 'Plus Jakarta Sans', sans-serif;
   font-weight: 800;
@@ -979,6 +988,9 @@ header.nav.scrolled {
   padding: 28px;
   box-shadow: var(--shadow-sm);
   border: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  min-height: 300px;
   transition: transform 0.35s var(--ease-out), box-shadow 0.35s var(--ease-out), border-color 0.25s var(--ease);
   position: relative;
 }
@@ -1187,8 +1199,12 @@ header.nav.scrolled {
   box-shadow: var(--shadow-sm);
   border: 1px solid var(--border);
   position: relative;
+  display: flex;
+  flex-direction: column;
+  min-height: 220px;
   transition: transform 0.3s var(--ease-out), box-shadow 0.3s var(--ease-out);
 }
+.step-title { min-height: 2.6em; }
 .step-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); }
 .step-number {
   font-family: 'Plus Jakarta Sans', sans-serif;
@@ -1699,8 +1715,10 @@ header.nav.scrolled {
   display: flex;
   flex-direction: column;
   gap: 16px;
+  min-height: 360px;
   transition: transform 0.3s var(--ease-out), box-shadow 0.3s var(--ease-out);
 }
+.case-headline { min-height: 2.6em; }
 .case-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); }
 .case-tag {
   display: inline-flex;
@@ -1786,7 +1804,9 @@ header.nav.scrolled {
   display: flex;
   flex-direction: column;
   gap: 16px;
+  min-height: 340px;
 }
+.service-title { min-height: 2.4em; }
 .service-icon-wrap {
   width: 48px;
   height: 48px;
@@ -1835,65 +1855,75 @@ header.nav.scrolled {
   background: var(--bg);
   border: 1px solid var(--border);
   border-radius: var(--radius-md);
-  padding: 16px 14px;
+  padding: 14px 14px 14px;
   font-size: 0.875rem;
   color: var(--deep-blue);
   font-weight: 600;
   display: flex;
-  align-items: flex-start;
+  flex-direction: column;
   gap: 10px;
-  transition: all 0.2s var(--ease);
+  min-height: 92px;
+  transition: border-color 0.2s var(--ease), background 0.2s var(--ease), transform 0.2s var(--ease), box-shadow 0.2s var(--ease);
   cursor: pointer;
   position: relative;
 }
 .dir-cat:hover { border-color: var(--primary); background: var(--primary-tint); transform: translateY(-2px); box-shadow: var(--shadow-sm); }
-.dir-cat.expert { border-color: rgba(245, 158, 11, 0.30); background: var(--amber-tint); }
+.dir-cat.expert { border-color: rgba(245, 158, 11, 0.32); background: var(--amber-tint); }
 .dir-cat.expert:hover { border-color: var(--amber); box-shadow: 0 4px 16px -4px rgba(245, 158, 11, 0.25); }
+.dir-cat-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  flex: 1;
+}
 .dir-legend {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 16px;
+  gap: 12px 24px;
   margin-bottom: 32px;
   font-size: 0.875rem;
   color: var(--text-secondary);
 }
-.dir-legend-item { display: inline-flex; align-items: center; gap: 8px; }
-.dir-legend-item em { font-style: normal; font-weight: 600; color: var(--amber-dark); }
+.dir-legend-item { display: inline-flex; align-items: center; gap: 8px; line-height: 1.3; }
+.dir-legend-item em { font-style: normal; font-weight: 700; color: var(--text-primary); }
 .dir-legend-dot { width: 12px; height: 12px; border-radius: 4px; flex-shrink: 0; }
 .dir-legend-dot-primary { background: var(--primary-soft); border: 1px solid var(--primary); }
 .dir-legend-dot-amber { background: var(--amber-soft); border: 1px solid var(--amber); }
 .dir-cat-num {
   flex-shrink: 0;
-  width: 26px;
-  height: 26px;
-  border-radius: 6px;
+  width: 28px;
+  height: 28px;
+  border-radius: 7px;
   background: var(--primary-soft);
   color: var(--primary);
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 0.75rem;
+  font-size: 0.8125rem;
   font-weight: 700;
   font-family: 'Plus Jakarta Sans';
+  line-height: 1;
 }
 .dir-cat.expert .dir-cat-num { background: var(--amber-soft); color: var(--amber-dark); }
-.dir-cat-text { flex: 1; line-height: 1.35; }
+.dir-cat-text { flex: 1; line-height: 1.35; padding-top: 5px; }
 .dir-expert-badge {
   display: inline-flex;
   align-items: center;
   gap: 4px;
-  margin-top: 6px;
+  align-self: flex-start;
+  margin-top: auto;
+  margin-left: 38px;
   font-size: 0.6875rem;
-  padding: 3px 8px;
+  padding: 4px 9px;
   border-radius: var(--radius-pill);
   font-weight: 700;
   background: var(--amber);
   color: white;
-  letter-spacing: 0.02em;
+  letter-spacing: 0.03em;
   text-transform: uppercase;
 }
-.dir-expert-badge svg { width: 10px; height: 10px; }
+.dir-expert-badge svg { width: 10px; height: 10px; flex-shrink: 0; }
 
 /* PRICING */
 .pricing { background: linear-gradient(180deg, var(--bg) 0%, var(--surface-2) 100%); }
@@ -2061,9 +2091,12 @@ header.nav.scrolled {
   flex-direction: column;
   gap: 18px;
   position: relative;
+  min-height: 440px;
   transition: transform 0.35s var(--ease-out), box-shadow 0.35s var(--ease-out), border-color 0.25s var(--ease);
   box-shadow: var(--shadow-sm);
 }
+.tier-card .btn-block { margin-top: auto; }
+.tier-title { min-height: 2.4em; }
 .tier-card.featured {
   border-color: transparent;
   box-shadow: var(--shadow-glow-strong);
@@ -2526,24 +2559,24 @@ footer::before {
     <div class="hero-stats">
       <div class="hero-stat">
         <div class="hero-stat-icon">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
         </div>
         <div class="hero-stat-value">350 000 ₽</div>
-        <div class="hero-stat-label">Максимальный размер контракта</div>
+        <div class="hero-stat-label">Размер контракта</div>
       </div>
       <div class="hero-stat">
         <div class="hero-stat-icon">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
         </div>
         <div class="hero-stat-value">3 мин</div>
-        <div class="hero-stat-label">Квалификационный тест</div>
+        <div class="hero-stat-label">Время теста</div>
       </div>
       <div class="hero-stat">
         <div class="hero-stat-icon">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
         </div>
         <div class="hero-stat-value">1,4 млн</div>
-        <div class="hero-stat-label">Долг, с которым я получил контракт</div>
+        <div class="hero-stat-label">Мой долг, с которым получил</div>
       </div>
     </div>
   </div>
@@ -3861,11 +3894,11 @@ function buildDirectionsGrid() {
       const isExpert = item.expert === true;
       html += `
         <div class="dir-cat ${isExpert ? 'expert' : ''}">
-          <span class="dir-cat-num">${item.n}</span>
-          <div class="dir-cat-text">
-            ${item.t}
-            ${isExpert ? `<span class="dir-expert-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Запуск со мной</span>` : ''}
+          <div class="dir-cat-header">
+            <span class="dir-cat-num">${item.n}</span>
+            <span class="dir-cat-text">${item.t}</span>
           </div>
+          ${isExpert ? `<span class="dir-expert-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Запуск со мной</span>` : ''}
         </div>`;
     });
   });
