@@ -2129,6 +2129,112 @@ header.nav.scrolled {
 .faq-footer-cta { text-align: center; margin-top: 36px; }
 .faq-footer-cta p { margin-bottom: 16px; color: var(--text-secondary); }
 
+/* HUMAN — relaxation moment before final CTA */
+.human {
+  background: linear-gradient(180deg, var(--bg) 0%, var(--amber-tint) 100%);
+  padding: 64px 0;
+}
+@media (min-width: 768px) { .human { padding: 96px 0; } }
+.human-card {
+  background: var(--surface);
+  border-radius: var(--radius-xl);
+  border: 1px solid var(--border);
+  box-shadow: 0 24px 56px -16px rgba(245, 158, 11, 0.18), 0 8px 24px -8px rgba(15, 23, 50, 0.10);
+  display: grid;
+  grid-template-columns: 1fr;
+  overflow: hidden;
+  max-width: 1080px;
+  margin: 0 auto;
+}
+@media (min-width: 880px) {
+  .human-card { grid-template-columns: 1.05fr 1fr; }
+}
+.human-photo {
+  position: relative;
+  background: linear-gradient(135deg, var(--deep-blue), var(--deep-blue-2));
+  min-height: 360px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+@media (min-width: 880px) { .human-photo { min-height: 520px; } }
+.human-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  position: absolute;
+  inset: 0;
+}
+.human-photo-placeholder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  color: rgba(255, 255, 255, 0.50);
+  font-size: 0.875rem;
+  text-align: center;
+  padding: 24px;
+  z-index: 1;
+}
+.human-photo-fallback .human-photo-placeholder { color: rgba(255, 255, 255, 0.70); }
+.human-photo:not(.human-photo-fallback) .human-photo-placeholder { display: none; }
+.human-text {
+  padding: 36px 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  justify-content: center;
+}
+@media (min-width: 768px) { .human-text { padding: 56px 48px; } }
+.human-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  align-self: flex-start;
+  padding: 6px 14px;
+  background: var(--amber-soft);
+  color: var(--amber-dark);
+  border-radius: var(--radius-pill);
+  font-size: 0.8125rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  border: 1px solid rgba(245, 158, 11, 0.25);
+}
+.human-title {
+  font-size: clamp(1.5rem, 3.5vw, 2.25rem);
+  color: var(--deep-blue);
+  line-height: 1.15;
+  margin-bottom: 4px;
+}
+.human-accent {
+  background: linear-gradient(180deg, #F59E0B 0%, #B45309 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.human-sub {
+  font-size: 1rem;
+  color: var(--text-secondary);
+  line-height: 1.65;
+}
+.human-sub strong { color: var(--text-primary); font-weight: 700; }
+.human-ctas {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 12px;
+  max-width: 360px;
+}
+@media (min-width: 540px) {
+  .human-ctas { flex-direction: row; max-width: none; }
+  .human-ctas .btn { flex-shrink: 0; }
+}
+.human-ctas .btn { width: 100%; }
+@media (min-width: 540px) { .human-ctas .btn { width: auto; } }
+
 /* FINAL CTA */
 .final-cta {
   background: linear-gradient(160deg, #1E2A5A 0%, #2A3A78 60%, #1E2A5A 100%);
@@ -3247,6 +3353,38 @@ footer::before {
         <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M21.5 4.5l-19 8c-.7.3-.7 1.3 0 1.6l4.5 1.7 1.7 5.5c.2.7 1.1.9 1.6.3l2.6-3 4.8 3.5c.6.4 1.4.1 1.5-.6l3-15c.2-.8-.7-1.4-1.5-1z"/></svg>
         Написать в Telegram
       </button>
+    </div>
+  </div>
+</section>
+
+<section class="human" id="human">
+  <div class="container">
+    <div class="human-card reveal">
+      <div class="human-photo">
+        <img src="./alpaca.jpg" alt="Александр Жбанков — после получения социального контракта" loading="lazy" onerror="this.parentElement.classList.add('human-photo-fallback'); this.style.display='none';">
+        <div class="human-photo-placeholder">
+          <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+          <span>Загрузите alpaca.jpg в корень репозитория</span>
+        </div>
+      </div>
+      <div class="human-text">
+        <div class="human-badge">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
+          Я живой человек
+        </div>
+        <h2 class="human-title">Улыбаюсь широко,<br>потому что <span class="human-accent">получил поддержку от&nbsp;государства</span></h2>
+        <p class="human-sub">Это я, без галстука и пафоса. Без «успешного успеха» и навязчивых продаж. Просто человек, который прошёл этот путь — и теперь помогает другим пройти его быстрее и без типичных ошибок.</p>
+        <p class="human-sub"><strong>Хотите так же?</strong> Напишите мне в Telegram — обсудим вашу ситуацию по-человечески, без скрипта и давления.</p>
+        <div class="human-ctas">
+          <button class="btn btn-amber btn-lg" onclick="openTelegram('human-section')">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M21.5 4.5l-19 8c-.7.3-.7 1.3 0 1.6l4.5 1.7 1.7 5.5c.2.7 1.1.9 1.6.3l2.6-3 4.8 3.5c.6.4 1.4.1 1.5-.6l3-15c.2-.8-.7-1.4-1.5-1z"/></svg>
+            Написать в Telegram
+          </button>
+          <button class="btn btn-secondary btn-lg" onclick="startTest('human')">
+            Пройти тест
+          </button>
+        </div>
+      </div>
     </div>
   </div>
 </section>
