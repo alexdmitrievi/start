@@ -3301,11 +3301,10 @@ footer::before {
     <div class="section-head reveal">
       <span class="section-eyebrow"><span class="dot"></span>28 федеральных направлений</span>
       <h2>Куда можно направить средства</h2>
-      <p>Официальный федеральный перечень. В <strong style="color: var(--amber-dark);">7 категориях я работаю как эксперт</strong> — помогу запустить ваш бизнес под ключ, а не просто получить деньги.</p>
+      <p>Официальный федеральный перечень. По <strong style="color: var(--amber-dark);">всем 28 направлениям</strong> помогу не просто получить деньги, а грамотно запустить бизнес под ключ.</p>
     </div>
     <div class="dir-legend">
-      <span class="dir-legend-item"><span class="dir-legend-dot dir-legend-dot-primary"></span>Помогу с подачей</span>
-      <span class="dir-legend-item"><span class="dir-legend-dot dir-legend-dot-amber"></span>Помогу с подачей <em>и</em> запущу бизнес</span>
+      <span class="dir-legend-item"><span class="dir-legend-dot dir-legend-dot-amber"></span>Запуск со мной — по всем направлениям</span>
     </div>
     <div class="dir-categories" id="directionCategoriesGrid"></div>
   </div>
@@ -3904,7 +3903,7 @@ function buildDirectionsGrid() {
             <span class="dir-cat-num">${item.n}</span>
             <span class="dir-cat-text">${item.t}</span>
           </div>
-          ${isExpert ? `<span class="dir-expert-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Запуск со мной</span>` : ''}
+          <span class="dir-expert-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Запуск со мной</span>
         </div>`;
     });
   });
