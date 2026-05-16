@@ -3508,15 +3508,16 @@ footer::before {
 // Public values — safe to expose
 const TELEGRAM_USERNAME = "zhbankov_alex";
 
-// Lead delivery: prefer serverless proxy (token stays server-side).
-// If TELEGRAM_PROXY_URL is empty, falls back to direct Telegram Bot API
-// using TELEGRAM_BOT_TOKEN below — INSECURE, replace before public traffic.
-const TELEGRAM_PROXY_URL = "";
+// Bot token + chat_id live in Cloudflare Worker secrets, NOT here.
+// All lead messages route through the Worker below.
+const TELEGRAM_PROXY_URL = "https://shanset-tg-proxy.ipzhbankov.workers.dev";
 
-// !! INSECURE !! Exposed in client. Replace with proxy ASAP.
-// See workers/telegram-proxy.js in repo for ready Cloudflare Worker.
-const TELEGRAM_BOT_TOKEN = "8940258228:AAHeZksb4YdffFx1sv9wJ8D4IJwLGYwHETI";
-const TELEGRAM_CHAT_ID = "407721399";
+// Direct-API fallback (kept disabled; only here so the function signature
+// stays the same). When proxy fails, we just swallow the error and rely
+// on the user's manual Telegram click via openTelegram() — never expose
+// the bot token in client code.
+const TELEGRAM_BOT_TOKEN = "";
+const TELEGRAM_CHAT_ID = "";
 
 const PAGE_LOADED_AT = Date.now();
 
