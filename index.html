@@ -15,9 +15,15 @@
 <meta property="og:type" content="website">
 <meta property="og:locale" content="ru_RU">
 <meta property="og:site_name" content="Шанс Есть">
+<meta property="og:image" content="./og-image.svg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Шанс Есть — социальный контракт до 350 000 ₽ + запуск бизнеса под ключ">
+<link rel="canonical" href="https://alexdmitrievi.github.io/start/">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Шанс Есть — Социальный контракт до 350 000 ₽">
-<meta name="twitter:description" content="Бесплатный тест за 3 минуты. Узнайте свои шансы на получение государственной поддержки.">
+<meta name="twitter:title" content="Шанс Есть — Контракт 350 000 ₽ + запуск под ключ">
+<meta name="twitter:description" content="Бесплатный тест за 3 минуты. Получите господдержку + экспертный запуск бизнеса.">
+<meta name="twitter:image" content="./og-image.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap">
@@ -25,12 +31,49 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "ProfessionalService",
-  "name": "Шанс Есть — Социальный контракт",
-  "description": "Консультации и сопровождение по социальному контракту. Помощь со сложными случаями.",
-  "areaServed": "RU",
-  "priceRange": "₽₽",
-  "serviceType": "Консультации по социальному контракту"
+  "@graph": [
+    {
+      "@type": "ProfessionalService",
+      "@id": "https://alexdmitrievi.github.io/start/#service",
+      "name": "Шанс Есть — Социальный контракт + Запуск бизнеса",
+      "description": "Помощь в получении социального контракта до 350 000 ₽ и грамотный запуск бизнеса: сайт, реклама, аналитика, AI-агенты, автоматизация. Специализация — сложные случаи: долги, отказы, исполнительное производство.",
+      "areaServed": { "@type": "Country", "name": "Россия" },
+      "priceRange": "₽₽",
+      "serviceType": "Консультации по социальному контракту, запуск бизнеса",
+      "url": "https://alexdmitrievi.github.io/start/",
+      "provider": {
+        "@type": "Person",
+        "name": "Александр Жбанков",
+        "jobTitle": "Эксперт по социальному контракту, маркетолог",
+        "knowsAbout": ["Социальный контракт", "Маркетинг", "Аналитика", "IT", "Автоматизация бизнеса", "AI-агенты"]
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Что такое «комбо» и почему 40 000 ₽?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Комбо — полное сопровождение контракта + одна услуга на запуск бизнеса + скидка 40% на остальные. 40 000 ₽ вместо ~99 000 ₽ при заказе по отдельности. ROI до первой выручки: 350 000 ÷ 40 000 = ×8.75." }
+        },
+        {
+          "@type": "Question",
+          "name": "У меня долги или исполнительное производство. Откажут?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Нет автоматического отказа. Долги — фактор оценки, не запрет. Я сам получил социальный контракт с долгом 1,4 млн ₽ и исполнительным производством. Важно, как оформлена заявка." }
+        },
+        {
+          "@type": "Question",
+          "name": "Гарантируете ли вы одобрение?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Нет. Решение принимает государственная комиссия. Я гарантирую профессиональный анализ ситуации, правильно оформленные документы и стратегию на основе реальной практики." }
+        },
+        {
+          "@type": "Question",
+          "name": "Сколько времени занимает рассмотрение?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Официально 10–30 рабочих дней в зависимости от региона. Фактически — может растянуться. В полном сопровождении отслеживаю статус заявки." }
+        }
+      ]
+    }
+  ]
 }
 </script>
 <style>
@@ -94,7 +137,23 @@
 html {
   scroll-behavior: smooth;
   -webkit-text-size-adjust: 100%;
-  scroll-padding-top: 80px;
+  scroll-padding-top: 76px;
+}
+*:focus { outline: none; }
+*:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+.btn:focus-visible { outline-offset: 3px; }
+.calc-option:focus-visible, .dir-option:focus-visible, .faq-trigger:focus-visible {
+  outline-offset: 1px;
+}
+@media (pointer: coarse) {
+  body { padding-bottom: 84px; }
+}
+@media (min-width: 1024px) {
+  body { padding-bottom: 0; }
 }
 body {
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
@@ -272,6 +331,12 @@ section { padding: 80px 0; position: relative; }
   animation: pulse 2s ease-in-out infinite;
   box-shadow: 0 0 8px rgba(245, 158, 11, 0.6);
 }
+
+/* Subdued accent classes (no gradient text) */
+.proof-h2-accent { color: var(--amber-dark); }
+.combo-h2 { color: white; }
+.combo-h2-accent { color: #FBBF24; }
+.launch-h2-accent { color: var(--amber-dark); }
 
 /* PROOF */
 .proof { background: linear-gradient(180deg, var(--bg) 0%, var(--amber-tint) 50%, var(--bg) 100%); position: relative; }
@@ -760,10 +825,6 @@ header.nav.scrolled {
 .hero-money {
   font-weight: 700;
   color: #FBBF24;
-  background: linear-gradient(180deg, #FFE69C 0%, #FBBF24 100%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
   font-feature-settings: 'tnum';
   font-variant-numeric: tabular-nums;
   letter-spacing: -0.01em;
@@ -826,7 +887,7 @@ header.nav.scrolled {
 @media (min-width: 540px) { .hero-ctas .btn { width: auto; } }
 .hero-trust-line {
   font-size: 0.875rem;
-  color: rgba(255,255,255,0.55);
+  color: rgba(255,255,255,0.78);
   margin: 0 auto 56px;
   animation: fadeUp 0.8s 0.3s var(--ease-out) both;
   display: flex;
@@ -877,11 +938,8 @@ header.nav.scrolled {
   color: white;
   letter-spacing: -0.03em;
   margin-bottom: 4px;
-  background: linear-gradient(180deg, #FFFFFF 0%, #C8D2FF 100%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
   line-height: 1.05;
+  font-feature-settings: 'tnum';
 }
 .hero-stat-label {
   font-size: 0.8125rem;
@@ -1136,10 +1194,7 @@ header.nav.scrolled {
   font-family: 'Plus Jakarta Sans', sans-serif;
   font-weight: 800;
   font-size: 2.25rem;
-  background: linear-gradient(135deg, var(--primary), var(--deep-blue));
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
+  color: var(--primary);
   line-height: 1;
   margin-bottom: 16px;
   letter-spacing: -0.03em;
@@ -1317,8 +1372,8 @@ header.nav.scrolled {
 .stepper-sub { font-size: 0.75rem; color: var(--text-muted); margin-top: 2px; }
 .stepper-controls { display: flex; align-items: center; gap: 8px; }
 .stepper-btn {
-  width: 36px;
-  height: 36px;
+  width: 44px;
+  height: 44px;
   border-radius: var(--radius-sm);
   background: var(--surface);
   border: 1px solid var(--border);
@@ -1328,7 +1383,8 @@ header.nav.scrolled {
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: all 0.15s var(--ease);
+  transition: background 0.15s var(--ease), color 0.15s var(--ease), border-color 0.15s var(--ease);
+  touch-action: manipulation;
 }
 .stepper-btn:hover { background: var(--primary); color: white; border-color: var(--primary); }
 .stepper-btn:disabled { opacity: 0.4; cursor: not-allowed; }
@@ -1399,12 +1455,16 @@ header.nav.scrolled {
   display: grid;
   grid-template-columns: 1fr;
   gap: 8px;
-  max-height: 420px;
-  overflow-y: auto;
-  padding-right: 4px;
   scrollbar-width: thin;
 }
-@media (min-width: 640px) { .directions-grid-calc { grid-template-columns: 1fr 1fr; } }
+@media (min-width: 768px) {
+  .directions-grid-calc {
+    grid-template-columns: 1fr 1fr;
+    max-height: 480px;
+    overflow-y: auto;
+    padding-right: 4px;
+  }
+}
 .directions-grid-calc::-webkit-scrollbar { width: 6px; }
 .directions-grid-calc::-webkit-scrollbar-thumb { background: var(--border-strong); border-radius: 4px; }
 .dir-group-label {
@@ -1665,8 +1725,24 @@ header.nav.scrolled {
   padding: 14px 16px;
   background: var(--success-soft);
   border-radius: var(--radius-md);
-  border-left: 3px solid var(--success);
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
 }
+.case-result::before {
+  content: '';
+  flex-shrink: 0;
+  width: 20px;
+  height: 20px;
+  margin-top: 2px;
+  background: var(--success);
+  border-radius: 50%;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'/%3E%3C/svg%3E");
+  background-size: 12px;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.case-result-content { flex: 1; }
 .case-result-label {
   font-size: 0.6875rem;
   font-weight: 700;
@@ -1905,15 +1981,13 @@ header.nav.scrolled {
   font-family: 'Plus Jakarta Sans';
   font-weight: 800;
   font-size: clamp(2rem, 5vw, 2.75rem);
-  background: linear-gradient(180deg, #F59E0B, #B45309);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
+  color: var(--amber-dark);
   letter-spacing: -0.03em;
   line-height: 1;
+  font-feature-settings: 'tnum';
 }
 .combo-tier-orig { font-size: 0.8125rem; color: var(--text-muted); }
-.combo-tier-orig::before { content: ''; }
+.combo-tier-orig s { color: var(--text-muted); text-decoration-thickness: 1.5px; text-decoration-color: var(--risk); }
 .combo-tier-right { display: flex; flex-direction: column; gap: 12px; }
 .combo-tier-features-title {
   font-size: 0.75rem;
@@ -2210,10 +2284,7 @@ header.nav.scrolled {
   margin-bottom: 4px;
 }
 .human-accent {
-  background: linear-gradient(180deg, #F59E0B 0%, #B45309 100%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
+  color: var(--amber-dark);
 }
 .human-sub {
   font-size: 1rem;
@@ -2253,10 +2324,6 @@ header.nav.scrolled {
 .final-cta h2 {
   color: white;
   margin-bottom: 16px;
-  background: linear-gradient(180deg, #FFFFFF 30%, #C8D2FF 100%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
 }
 .final-cta-sub {
   color: rgba(255,255,255,0.75);
@@ -2274,7 +2341,7 @@ header.nav.scrolled {
 }
 @media (min-width: 540px) { .final-cta-buttons { flex-direction: row; } }
 .final-cta-buttons .btn { min-width: 220px; }
-.final-cta-microcopy { font-size: 0.875rem; color: rgba(255,255,255,0.55); }
+.final-cta-microcopy { font-size: 0.875rem; color: rgba(255,255,255,0.78); }
 
 /* FOOTER */
 footer {
@@ -2298,10 +2365,10 @@ footer::before {
 }
 @media (min-width: 768px) { .footer-grid { grid-template-columns: 1.5fr 1fr 1fr; } }
 .footer-brand { color: white; font-family: 'Plus Jakarta Sans'; font-weight: 800; font-size: 1.125rem; margin-bottom: 8px; }
-.footer-desc { font-size: 0.875rem; line-height: 1.6; color: rgba(255,255,255,0.55); max-width: 360px; }
+.footer-desc { font-size: 0.875rem; line-height: 1.6; color: rgba(255,255,255,0.72); max-width: 360px; }
 .footer-col h4 { color: white; margin-bottom: 14px; font-size: 0.875rem; letter-spacing: 0.04em; text-transform: uppercase; }
 .footer-links { list-style: none; display: flex; flex-direction: column; gap: 8px; }
-.footer-links a { font-size: 0.875rem; color: rgba(255,255,255,0.55); transition: color 0.15s; }
+.footer-links a { font-size: 0.875rem; color: rgba(255,255,255,0.72); transition: color 0.15s; }
 .footer-links a:hover { color: white; }
 .footer-disclaimer {
   background: rgba(255,255,255,0.04);
@@ -2322,8 +2389,9 @@ footer::before {
   gap: 12px;
   justify-content: space-between;
   font-size: 0.8125rem;
-  color: rgba(255,255,255,0.45);
+  color: rgba(255,255,255,0.65);
 }
+.footer-legal-id { font-size: 0.8125rem; color: rgba(255,255,255,0.72); font-family: 'JetBrains Mono', ui-monospace, monospace; letter-spacing: 0.02em; }
 
 /* STICKY CTA */
 .sticky-cta {
@@ -2435,20 +2503,19 @@ footer::before {
 <section class="hero">
   <div class="container hero-inner">
     <span class="section-eyebrow on-dark"><span class="dot"></span>Бесплатная квалификация · 3 минуты</span>
-    <h1>Сложная ситуация —<br><span class="accent">не приговор</span></h1>
-    <p class="hero-sub">До <span class="hero-money">350 000 ₽</span> от государства <span class="hero-plus">+</span> грамотный запуск бизнеса с экспертом по маркетингу, аналитике и IT. Я провёл этот путь сам — и помогаю другим.</p>
+    <h1 id="heroH1"><span data-variant="A">Сложная ситуация —<br><span class="accent">не приговор</span></span><span data-variant="B" style="display:none">До <span class="accent">350 000 ₽</span> —<br>даже с долгами и&nbsp;отказами</span></h1>
+    <p class="hero-sub" id="heroSub"><span data-variant="A">До <span class="hero-money">350 000 ₽</span> от государства <span class="hero-plus">+</span> грамотный запуск бизнеса с экспертом по маркетингу, аналитике и IT. Я провёл этот путь сам — и помогаю другим.</span><span data-variant="B" style="display:none">Помогаю получить социальный контракт и запустить бизнес профессионально. Я сам прошёл это с долгом 1,4 млн ₽ — банк-скрин и решение есть на странице ниже.</span></p>
     <div class="hero-combo-pills">
-      <span class="combo-pill"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Социальный контракт</span>
-      <span class="combo-pill amber"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Сайт · Реклама · AI</span>
-      <span class="combo-pill amber"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Запуск под ключ</span>
+      <span class="combo-pill"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Социальный контракт</span>
+      <span class="combo-pill amber"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Запуск под ключ — сайт, реклама, AI</span>
     </div>
     <div class="hero-ctas">
       <button class="btn btn-primary btn-lg" onclick="startTest('hero')">
         Пройти тест бесплатно
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
       </button>
-      <button class="btn btn-ghost btn-lg" onclick="openTelegram('hero')">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M21.5 4.5l-19 8c-.7.3-.7 1.3 0 1.6l4.5 1.7 1.7 5.5c.2.7 1.1.9 1.6.3l2.6-3 4.8 3.5c.6.4 1.4.1 1.5-.6l3-15c.2-.8-.7-1.4-1.5-1z"/></svg>
+      <button class="btn btn-ghost btn-lg" onclick="openTelegram('hero')" aria-label="Открыть чат в Telegram">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21.5 4.5l-19 8c-.7.3-.7 1.3 0 1.6l4.5 1.7 1.7 5.5c.2.7 1.1.9 1.6.3l2.6-3 4.8 3.5c.6.4 1.4.1 1.5-.6l3-15c.2-.8-.7-1.4-1.5-1z"/></svg>
         Telegram
       </button>
     </div>
@@ -2631,7 +2698,7 @@ footer::before {
   <div class="container">
     <div class="section-head reveal">
       <span class="section-eyebrow"><span class="amber-dot"></span>Доказательство — не теория</span>
-      <h2>Я не консультант со стороны.<br><span style="background: linear-gradient(180deg, #F59E0B, #B45309); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;">Я получил это сам</span></h2>
+      <h2>Я не консультант со стороны.<br><span class="proof-h2-accent">Я получил это сам</span></h2>
       <p>Ниже — реальное зачисление на мою карту и официальное решение Министерства финансов Омской области.</p>
     </div>
     <div class="proof-grid">
@@ -2740,9 +2807,9 @@ footer::before {
     </div>
     <div class="proof-cta-row reveal">
       <p style="text-align: center; font-size: 1.0625rem; color: var(--text-primary); margin-bottom: 20px;">У меня был долг 1,4 млн ₽ и арестованные счета. И я получил это.<br><strong>Значит, у вас тоже шанс есть.</strong></p>
-      <button class="btn btn-amber btn-lg" onclick="startTest('proof')">
+      <button class="btn btn-primary btn-lg" onclick="startTest('proof')">
         Узнать свои шансы
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
       </button>
     </div>
   </div>
@@ -2753,7 +2820,7 @@ footer::before {
     <div class="combo-inner reveal">
       <div class="combo-text">
         <span class="section-eyebrow on-dark"><span class="amber-dot"></span>Важное отличие</span>
-        <h2 style="color: white;">Контракт — это <span style="background: linear-gradient(180deg, #FBBF24, #F59E0B); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;">только половина пути</span></h2>
+        <h2 class="combo-h2">Контракт — это <span class="combo-h2-accent">только половина пути</span></h2>
         <p style="color: rgba(255,255,255,0.78); font-size: 1.0625rem; margin-bottom: 24px; line-height: 1.65;">350 000 ₽ от государства — это старт. Но 80% людей, получивших контракт, <strong style="color: white;">не знают, что делать дальше</strong>: покупают оборудование, открывают ИП — и тонут в первый же месяц без клиентов, рекламы и аналитики.</p>
         <p style="color: rgba(255,255,255,0.78); font-size: 1.0625rem; margin-bottom: 32px; line-height: 1.65;">Я даю и то, и другое. Помогаю получить контракт — <strong style="color: #FBBF24;">и запустить ваш бизнес профессионально</strong>, с моим опытом в маркетинге, аналитике, IT и автоматизации.</p>
         <div class="combo-math">
@@ -2773,9 +2840,9 @@ footer::before {
           </div>
         </div>
         <div class="combo-ctas">
-          <button class="btn btn-amber btn-lg" onclick="startTest('combo')">
+          <button class="btn btn-primary btn-lg" onclick="startTest('combo')">
             Пройти тест
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
           </button>
           <button class="btn btn-ghost btn-lg" onclick="document.getElementById('launch').scrollIntoView({behavior:'smooth'})">
             Что входит в запуск
@@ -2790,7 +2857,7 @@ footer::before {
   <div class="container">
     <div class="section-head reveal">
       <span class="section-eyebrow"><span class="amber-dot"></span>А ещё — запуск под ключ</span>
-      <h2>Что вы получите <span style="background: linear-gradient(180deg, #F59E0B, #B45309); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;">вместе с контрактом</span></h2>
+      <h2>Что вы получите <span class="launch-h2-accent">вместе с контрактом</span></h2>
       <p>8 услуг для профессионального старта. По комбо — со скидкой до 40%.</p>
     </div>
     <div class="launch-grid stagger">
@@ -2984,11 +3051,11 @@ footer::before {
         <div class="calc-step" data-step="4">
           <div class="calc-step-eyebrow">Шаг 4 из 8</div>
           <h3 class="calc-step-title">Доходы семьи</h3>
-          <p class="calc-step-helper">Суммируйте все официальные и неофициальные доходы: зарплаты, пенсии, пособия, самозанятость, подработки. Нет дохода — введите 0.</p>
+          <p class="calc-step-helper">Это нужно только для расчёта вашей оценки на этом сайте. Никуда не передаётся. Укажите, сколько в среднем поступает в семью — зарплаты, пенсии, пособия, самозанятость. Нет дохода — введите 0.</p>
           <div class="calc-field">
-            <label class="calc-input-label" for="incomeInput">Совокупный ежемесячный доход семьи, ₽</label>
-            <input type="text" inputmode="numeric" class="calc-input" id="incomeInput" placeholder="0">
-            <div class="calc-input-helper">Округлите до тысячи. Точность важнее, чем занижение.</div>
+            <label class="calc-input-label" for="incomeInput">Среднемесячный доход семьи, ₽</label>
+            <input type="text" inputmode="numeric" class="calc-input" id="incomeInput" placeholder="0" aria-describedby="incomeHelper">
+            <div class="calc-input-helper" id="incomeHelper">Округлите до тысячи. Поле анонимное — никаких регистраций и передачи третьим лицам.</div>
             <div class="calc-error" id="incomeError">Укажите доход (можно 0)</div>
           </div>
           <div class="income-summary" id="incomeSummary" style="display: none;">
@@ -3049,32 +3116,11 @@ footer::before {
         <!-- RESULT -->
         <div class="result-screen" id="resultScreen">
           <div class="result-eyebrow">Ваш результат</div>
-          <div class="score-display">
-            <svg class="score-ring" viewBox="0 0 200 200">
-              <defs>
-                <linearGradient id="ringGradHigh" x1="0%" y1="0%" x2="100%" y2="100%">
-                  <stop offset="0%" stop-color="#22C55E"/>
-                  <stop offset="100%" stop-color="#16A34A"/>
-                </linearGradient>
-                <linearGradient id="ringGradMedium" x1="0%" y1="0%" x2="100%" y2="100%">
-                  <stop offset="0%" stop-color="#FBBF24"/>
-                  <stop offset="100%" stop-color="#F59E0B"/>
-                </linearGradient>
-                <linearGradient id="ringGradLow" x1="0%" y1="0%" x2="100%" y2="100%">
-                  <stop offset="0%" stop-color="#94A3B8"/>
-                  <stop offset="100%" stop-color="#6B8DB5"/>
-                </linearGradient>
-                <linearGradient id="ringGradComplex" x1="0%" y1="0%" x2="100%" y2="100%">
-                  <stop offset="0%" stop-color="#7B96FF"/>
-                  <stop offset="100%" stop-color="#2F5BFF"/>
-                </linearGradient>
-                <filter id="ringGlow" x="-20%" y="-20%" width="140%" height="140%">
-                  <feGaussianBlur stdDeviation="3" result="blur"/>
-                  <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
-                </filter>
-              </defs>
+          <div class="score-display" role="img" aria-labelledby="scoreAriaLabel">
+            <span id="scoreAriaLabel" class="sr-only">Ваш балл: <span id="scoreAriaValue">0</span> из 92</span>
+            <svg class="score-ring" viewBox="0 0 200 200" aria-hidden="true">
               <circle class="score-ring-bg" cx="100" cy="100" r="90"/>
-              <circle class="score-ring-fg" id="scoreRingFg" cx="100" cy="100" r="90" filter="url(#ringGlow)"/>
+              <circle class="score-ring-fg" id="scoreRingFg" cx="100" cy="100" r="90"/>
             </svg>
             <div class="score-content">
               <div class="score-num" id="scoreNum">0</div>
@@ -3119,8 +3165,10 @@ footer::before {
         <h3 class="case-headline">Долг по ИП 800 000 ₽, арестованный счёт</h3>
         <p class="case-body">Предприниматель, действующее исполнительное производство, расчётный счёт под арестом. Два юриста сказали — бесполезно подаваться.</p>
         <div class="case-result">
-          <div class="case-result-label">Результат</div>
-          <div class="case-result-text">Получил контракт на развитие дела</div>
+          <div class="case-result-content">
+            <div class="case-result-label">Результат</div>
+            <div class="case-result-text">Получил контракт на развитие дела</div>
+          </div>
         </div>
         <div class="case-meta">
           <span>Срок: 27 дней</span>
@@ -3134,8 +3182,10 @@ footer::before {
         <h3 class="case-headline">Два отказа подряд</h3>
         <p class="case-body">Подавала самостоятельно дважды — оба раза отказ. Консультант в МФЦ сказал, что её случай «безнадёжный».</p>
         <div class="case-result">
-          <div class="case-result-label">Результат</div>
-          <div class="case-result-text">Третья подача с переработанной стратегией — одобрение</div>
+          <div class="case-result-content">
+            <div class="case-result-label">Результат</div>
+            <div class="case-result-text">Третья подача с переработанной стратегией — одобрение</div>
+          </div>
         </div>
         <div class="case-meta">
           <span>Срок: 41 день</span>
@@ -3149,8 +3199,10 @@ footer::before {
         <h3 class="case-headline">Самозанятая, одна с ребёнком</h3>
         <p class="case-body">Нестабильный доход, ниже прожиточного минимума. Хотела развить свой профиль в косметологии, но не понимала, с чего начать.</p>
         <div class="case-result">
-          <div class="case-result-label">Результат</div>
-          <div class="case-result-text">Контракт: профобучение + стартовый набор оборудования</div>
+          <div class="case-result-content">
+            <div class="case-result-label">Результат</div>
+            <div class="case-result-text">Контракт: профобучение + стартовый набор оборудования</div>
+          </div>
         </div>
         <div class="case-meta">
           <span>Срок: 19 дней</span>
@@ -3304,7 +3356,7 @@ footer::before {
               <p class="combo-tier-sub">Полное сопровождение контракта + любая 1 услуга из «Запуск под ключ» + скидка <strong>−40%</strong> на остальные услуги списка.</p>
               <div class="combo-tier-price">
                 <span class="combo-tier-amount">40 000 ₽</span>
-                <span class="combo-tier-orig">~~99 000 ₽~~ при заказе по отдельности</span>
+                <span class="combo-tier-orig"><s>99 000 ₽</s> при заказе по отдельности</span>
               </div>
               <button class="btn btn-amber btn-lg" onclick="openTelegram('combo-tier')">
                 Обсудить комбо в Telegram
@@ -3361,10 +3413,13 @@ footer::before {
   <div class="container">
     <div class="human-card reveal">
       <div class="human-photo">
-        <img src="./alpaca.png" alt="Александр Жбанков — после получения социального контракта" loading="lazy" onerror="this.parentElement.classList.add('human-photo-fallback'); this.style.display='none';">
+        <picture>
+          <source srcset="./alpaca.webp" type="image/webp">
+          <img src="./alpaca.jpg" alt="Александр Жбанков, автор сервиса «Шанс Есть» — после получения социального контракта" loading="lazy" width="1122" height="1402" onerror="this.parentElement.parentElement.classList.add('human-photo-fallback'); this.style.display='none';">
+        </picture>
         <div class="human-photo-placeholder">
-          <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
-          <span>Загрузите alpaca.png в корень репозитория</span>
+          <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+          <span>Загрузите alpaca.webp в корень репозитория</span>
         </div>
       </div>
       <div class="human-text">
@@ -3376,8 +3431,8 @@ footer::before {
         <p class="human-sub">Это я, без галстука и пафоса. Без «успешного успеха» и навязчивых продаж. Просто человек, который прошёл этот путь — и теперь помогает другим пройти его быстрее и без типичных ошибок.</p>
         <p class="human-sub"><strong>Хотите так же?</strong> Напишите мне в Telegram — обсудим вашу ситуацию по-человечески, без скрипта и давления.</p>
         <div class="human-ctas">
-          <button class="btn btn-amber btn-lg" onclick="openTelegram('human-section')">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M21.5 4.5l-19 8c-.7.3-.7 1.3 0 1.6l4.5 1.7 1.7 5.5c.2.7 1.1.9 1.6.3l2.6-3 4.8 3.5c.6.4 1.4.1 1.5-.6l3-15c.2-.8-.7-1.4-1.5-1z"/></svg>
+          <button class="btn btn-primary btn-lg" onclick="openTelegram('human-section')" aria-label="Написать в Telegram">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21.5 4.5l-19 8c-.7.3-.7 1.3 0 1.6l4.5 1.7 1.7 5.5c.2.7 1.1.9 1.6.3l2.6-3 4.8 3.5c.6.4 1.4.1 1.5-.6l3-15c.2-.8-.7-1.4-1.5-1z"/></svg>
             Написать в Telegram
           </button>
           <button class="btn btn-secondary btn-lg" onclick="startTest('human')">
@@ -3412,7 +3467,7 @@ footer::before {
     <div class="footer-grid">
       <div>
         <div class="footer-brand">Шанс Есть</div>
-        <p class="footer-desc">Помощь в получении социального контракта. Специализация — сложные случаи: долги, отказы, исполнительное производство.</p>
+        <p class="footer-desc">Помощь в получении социального контракта и запуск бизнеса под ключ. Специализация — сложные случаи: долги, отказы, исполнительное производство.</p>
       </div>
       <div class="footer-col">
         <h4>Навигация</h4>
@@ -3424,20 +3479,20 @@ footer::before {
         </ul>
       </div>
       <div class="footer-col">
-        <h4>Связь</h4>
+        <h4>Связь и документы</h4>
         <ul class="footer-links">
-          <li><a href="#" onclick="openTelegram('footer'); return false;">Telegram</a></li>
-          <li><a href="#" onclick="event.preventDefault();">Политика конфиденциальности</a></li>
-          <li><a href="#" onclick="event.preventDefault();">Условия обработки данных</a></li>
+          <li><a href="#" onclick="openTelegram('footer'); return false;">Telegram · @zhbankov_alex</a></li>
+          <li><a href="./privacy.html">Политика конфиденциальности</a></li>
+          <li><a href="./offer.html">Публичная оферта</a></li>
         </ul>
       </div>
     </div>
     <div class="footer-disclaimer">
-      <strong>Юридический дисклеймер.</strong> Сайт «Шанс Есть» не является государственным органом и не выдаёт социальные контракты. Информация на сайте носит консультационный и образовательный характер. Решение о предоставлении государственной социальной помощи на основании социального контракта принимается уполномоченным органом субъекта Российской Федерации в соответствии с Федеральным законом № 178-ФЗ «О государственной социальной помощи» и региональным законодательством. Результаты прохождения теста являются оценочной информацией и не гарантируют положительного решения комиссии. Мы не передаём ваши данные третьим лицам — только для связи по консультации.
+      <strong>Юридический дисклеймер.</strong> Сайт «Шанс Есть» не является государственным органом и не выдаёт социальные контракты. Информация на сайте носит консультационный и образовательный характер. Решение о предоставлении государственной социальной помощи на основании социального контракта принимается уполномоченным органом субъекта Российской Федерации в соответствии с Федеральным законом № 178-ФЗ «О государственной социальной помощи» и региональным законодательством. Результаты прохождения теста являются оценочной информацией и не гарантируют положительного решения комиссии. Персональные данные обрабатываются в соответствии с Федеральным законом № 152-ФЗ «О персональных данных».
     </div>
     <div class="footer-bottom">
-      <span>© 2022–2026 «Шанс Есть». Все права защищены.</span>
-      <span>Сделано с уважением к каждой ситуации</span>
+      <span>© 2022–2026 ИП Жбанков А.А. · Все права защищены.</span>
+      <span class="footer-legal-id">ИНН [заполнить] · ОГРНИП [заполнить]</span>
     </div>
   </div>
 </footer>
@@ -3450,9 +3505,58 @@ footer::before {
 </div>
 
 <script>
+// Public values — safe to expose
+const TELEGRAM_USERNAME = "zhbankov_alex";
+
+// Lead delivery: prefer serverless proxy (token stays server-side).
+// If TELEGRAM_PROXY_URL is empty, falls back to direct Telegram Bot API
+// using TELEGRAM_BOT_TOKEN below — INSECURE, replace before public traffic.
+const TELEGRAM_PROXY_URL = "";
+
+// !! INSECURE !! Exposed in client. Replace with proxy ASAP.
+// See workers/telegram-proxy.js in repo for ready Cloudflare Worker.
 const TELEGRAM_BOT_TOKEN = "8940258228:AAHeZksb4YdffFx1sv9wJ8D4IJwLGYwHETI";
 const TELEGRAM_CHAT_ID = "407721399";
-const TELEGRAM_USERNAME = "zhbankov_alex";
+
+const PAGE_LOADED_AT = Date.now();
+
+// A/B test: hero headline variant (stable per visitor via localStorage)
+function getABVariant() {
+  try {
+    const urlOverride = new URLSearchParams(location.search).get('ab');
+    if (urlOverride === 'A' || urlOverride === 'B') return urlOverride;
+    let v = localStorage.getItem('ab_hero');
+    if (!v) { v = Math.random() < 0.5 ? 'A' : 'B'; localStorage.setItem('ab_hero', v); }
+    return v;
+  } catch (e) { return 'A'; }
+}
+function applyABVariant() {
+  const variant = getABVariant();
+  document.documentElement.dataset.abHero = variant;
+  document.querySelectorAll('[data-variant]').forEach(el => {
+    el.style.display = el.dataset.variant === variant ? '' : 'none';
+  });
+}
+function getUTM() {
+  try {
+    const p = new URLSearchParams(window.location.search);
+    return {
+      utm_source: p.get('utm_source') || '',
+      utm_medium: p.get('utm_medium') || '',
+      utm_campaign: p.get('utm_campaign') || '',
+      utm_content: p.get('utm_content') || '',
+      utm_term: p.get('utm_term') || '',
+      referrer: document.referrer || ''
+    };
+  } catch (e) { return {}; }
+}
+function getIntentTier(source) {
+  if (!source) return 'COLD';
+  if (source.startsWith('result-')) return 'HOT';
+  if (source === 'pricing-combo' || source === 'combo-tier' || source === 'combo' || source === 'launch-section') return 'WARM';
+  if (source === 'human-section' || source === 'final' || source === 'proof') return 'WARM';
+  return 'COLD';
+}
 
 const REGIONS_A = [
   "Москва","Московская область","Санкт-Петербург","Ленинградская область",
@@ -3611,6 +3715,7 @@ function $(s, p) { return (p || document).querySelector(s); }
 function $$(s, p) { return Array.from((p || document).querySelectorAll(s)); }
 
 function init() {
+  applyABVariant();
   buildRegionSelect();
   buildStatusOptions();
   buildBusinessOptions();
@@ -4059,16 +4164,18 @@ function renderResult() {
   const offset = circumference - (score / 92) * circumference;
 
   badge.className = 'score-badge';
-  let gradId = 'ringGradHigh';
+  let ringColor = '#16A34A';
   let numColor = '#16A34A';
-  if (type === 'HIGH') { badge.classList.add('high'); badge.textContent = 'Высокий шанс'; gradId = 'ringGradHigh'; numColor = '#16A34A'; }
-  else if (type === 'MEDIUM') { badge.classList.add('medium'); badge.textContent = 'Шанс есть'; gradId = 'ringGradMedium'; numColor = '#B45309'; }
-  else if (type === 'LOW') { badge.classList.add('low'); badge.textContent = 'Требует стратегии'; gradId = 'ringGradLow'; numColor = '#6B8DB5'; }
-  else if (type === 'COMPLEX') { badge.classList.add('complex'); badge.textContent = 'Нестандартный случай'; gradId = 'ringGradComplex'; numColor = '#2F5BFF'; }
-  ringFg.setAttribute('stroke', `url(#${gradId})`);
+  if (type === 'HIGH') { badge.classList.add('high'); badge.textContent = 'Высокий шанс'; ringColor = '#16A34A'; numColor = '#16A34A'; }
+  else if (type === 'MEDIUM') { badge.classList.add('medium'); badge.textContent = 'Шанс есть'; ringColor = '#F59E0B'; numColor = '#B45309'; }
+  else if (type === 'LOW') { badge.classList.add('low'); badge.textContent = 'Требует стратегии'; ringColor = '#6B8DB5'; numColor = '#475569'; }
+  else if (type === 'COMPLEX') { badge.classList.add('complex'); badge.textContent = 'Нестандартный случай'; ringColor = '#2F5BFF'; numColor = '#1E2A5A'; }
+  ringFg.setAttribute('stroke', ringColor);
   num.style.color = numColor;
   ringFg.style.strokeDashoffset = circumference;
   setTimeout(() => { ringFg.style.strokeDashoffset = offset; }, 100);
+  const ariaVal = document.getElementById('scoreAriaValue');
+  if (ariaVal) ariaVal.textContent = score;
 
   animateNumber(num, 0, score, 1400);
 
@@ -4186,23 +4293,35 @@ function dynamicInsights(type) {
 function openTelegram(source) {
   const score = state.score || '';
   const type = state.resultType || '';
+  const tier = getIntentTier(source);
+  const utm = getUTM();
+  const timeOnPage = Math.round((Date.now() - PAGE_LOADED_AT) / 1000);
   let msg = 'Здравствуйте! Я с сайта «Шанс Есть».';
   if (score) msg += `\nМой результат теста: ${score}/92 (${type}).`;
-  msg += '\nХочу обсудить мою ситуацию по социальному контракту.';
-  if (TELEGRAM_BOT_TOKEN && TELEGRAM_BOT_TOKEN !== 'PASTE_HERE' && TELEGRAM_CHAT_ID && TELEGRAM_CHAT_ID !== 'PASTE_HERE') {
-    sendBotMessage(`[CTA: ${source}] ${msg}`);
-  }
+  msg += '\nХочу обсудить мою ситуацию.';
+  const abHero = document.documentElement.dataset.abHero || '?';
+  const meta = [
+    `[CTA: ${source}]`,
+    `[Intent: ${tier}]`,
+    `[A/B: ${abHero}]`,
+    `[Time: ${timeOnPage}s]`,
+    utm.utm_source ? `[Source: ${utm.utm_source}]` : '',
+    utm.utm_campaign ? `[Campaign: ${utm.utm_campaign}]` : ''
+  ].filter(Boolean).join(' ');
+  sendBotMessage(`📨 Click → Telegram\n${meta}\n\n${msg}`);
   const url = `https://t.me/${TELEGRAM_USERNAME}?text=${encodeURIComponent(msg)}`;
   window.open(url, '_blank', 'noopener');
 }
 
 function sendToTelegram() {
-  if (!TELEGRAM_BOT_TOKEN || TELEGRAM_BOT_TOKEN === 'PASTE_HERE') return;
-  if (!TELEGRAM_CHAT_ID || TELEGRAM_CHAT_ID === 'PASTE_HERE') return;
   const a = state.answers;
+  const utm = getUTM();
+  const timeOnPage = Math.round((Date.now() - PAGE_LOADED_AT) / 1000);
+  const abHero = document.documentElement.dataset.abHero || '?';
   const lines = [
     `🎯 Новый результат теста`,
     `Балл: ${state.score}/92 (${state.resultType})`,
+    `A/B вариант hero: ${abHero}`,
     `Регион: ${a.region || '—'}`,
     `Статус: ${(STATUS_OPTIONS.find(s => s.id === a.status) || {}).title || '—'}`,
     `Семья: ${computeFamilySize()} чел., детей ${a.family.children}`,
@@ -4210,17 +4329,35 @@ function sendToTelegram() {
     `Направление: ${getDirectionTitle(a.direction)}`,
     `Сложности: ${a.complications.length ? a.complications.map(id => COMPLICATIONS.find(c => c.id===id).title).join(', ') : '—'}`,
     `Отчётность: ${(REPORTING_OPTIONS.find(r => r.id === a.reporting) || {}).title || '—'}`,
-    `Флаги: ${state.flags.join(', ') || '—'}`
-  ];
+    `Флаги: ${state.flags.join(', ') || '—'}`,
+    ``,
+    `⏱ Время на странице: ${timeOnPage}s`,
+    utm.utm_source ? `📊 utm_source: ${utm.utm_source}` : '',
+    utm.utm_campaign ? `📊 utm_campaign: ${utm.utm_campaign}` : '',
+    utm.utm_medium ? `📊 utm_medium: ${utm.utm_medium}` : '',
+    utm.referrer ? `🔗 referrer: ${utm.referrer.substring(0, 80)}` : ''
+  ].filter(Boolean);
   sendBotMessage(lines.join('\n'));
 }
 
 function sendBotMessage(text) {
+  if (TELEGRAM_PROXY_URL) {
+    try {
+      fetch(TELEGRAM_PROXY_URL, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ text: text })
+      });
+      return;
+    } catch (e) {}
+  }
+  if (!TELEGRAM_BOT_TOKEN || TELEGRAM_BOT_TOKEN === 'PASTE_HERE') return;
+  if (!TELEGRAM_CHAT_ID || TELEGRAM_CHAT_ID === 'PASTE_HERE') return;
   try {
     fetch(`https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ chat_id: TELEGRAM_CHAT_ID, text: text, parse_mode: 'HTML' })
+      body: JSON.stringify({ chat_id: TELEGRAM_CHAT_ID, text: text })
     });
   } catch (e) {}
 }
