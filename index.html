@@ -6,12 +6,12 @@
 <meta name="theme-color" content="#1E2A5A">
 <meta name="color-scheme" content="light">
 <title>Шанс Есть — Социальный контракт до 350 000 ₽. Помощь даже в сложных случаях</title>
-<meta name="description" content="Получите социальный контракт до 350 000 ₽ от государства — даже с долгами, отказами, исполнительным производством. Бесплатный тест за 3 минуты. Помогаю с 2022 года, прошёл этот путь сам.">
+<meta name="description" content="Социальный контракт до 350 000 ₽ от государства + грамотный запуск вашего бизнеса под ключ: сайт, реклама, аналитика, AI-агенты, автоматизация. Помогаю даже с долгами и отказами. Бесплатный тест за 3 минуты.">
 <meta name="keywords" content="социальный контракт, 350000 рублей, государственная поддержка, помощь с долгами, контракт с долгами, безработным, ИП, самозанятым">
 <meta name="robots" content="index, follow">
 <meta name="author" content="Шанс Есть">
-<meta property="og:title" content="Шанс Есть — Социальный контракт до 350 000 ₽">
-<meta property="og:description" content="Бесплатный тест на шансы получения. Помощь со сложными случаями: долги, отказы, исполнительное производство.">
+<meta property="og:title" content="Шанс Есть — Контракт 350 000 ₽ + запуск бизнеса под ключ">
+<meta property="og:description" content="Помогаю получить социальный контракт от государства и грамотно запустить бизнес: сайт, реклама, аналитика, AI. Прошёл этот путь сам — с долгом 1,4 млн ₽.">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="ru_RU">
 <meta property="og:site_name" content="Шанс Есть">
@@ -20,7 +20,7 @@
 <meta name="twitter:description" content="Бесплатный тест за 3 минуты. Узнайте свои шансы на получение государственной поддержки.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%231E2A5A'/%3E%3Cpath d='M30 52 L44 66 L72 36' stroke='%232F5BFF' stroke-width='10' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
 <script type="application/ld+json">
 {
@@ -59,6 +59,12 @@
   --warning: #F59E0B;
   --warning-soft: #FEF3C7;
   --warning-dark: #B45309;
+  --amber: #F59E0B;
+  --amber-bright: #FBBF24;
+  --amber-dark: #B45309;
+  --amber-soft: #FEF3C7;
+  --amber-tint: #FFFAEB;
+  --amber-glow: 0 0 0 1px rgba(245, 158, 11, 0.18), 0 12px 32px -8px rgba(245, 158, 11, 0.30);
   --risk: #F87171;
   --risk-soft: #FEE2E2;
   --risk-dark: #DC2626;
@@ -107,7 +113,7 @@ button { font: inherit; cursor: pointer; border: none; background: none; color: 
 a { color: inherit; text-decoration: none; }
 input, textarea, select { font: inherit; color: inherit; }
 h1, h2, h3, h4, h5 {
-  font-family: 'Manrope', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
   font-weight: 700;
   line-height: 1.08;
   letter-spacing: -0.028em;
@@ -238,6 +244,428 @@ section { padding: 80px 0; position: relative; }
 .btn-success:hover { background: var(--success-dark); }
 .btn-warning { background: var(--warning); color: white; box-shadow: 0 4px 12px rgba(245, 158, 11, 0.30); }
 .btn-warning:hover { background: var(--warning-dark); }
+.btn-amber {
+  background: linear-gradient(180deg, #FBBF24 0%, #F59E0B 100%);
+  color: #2A1A00;
+  box-shadow: 0 6px 18px rgba(245, 158, 11, 0.38), 0 1px 3px rgba(180, 83, 9, 0.30), inset 0 1px 0 rgba(255, 255, 255, 0.28);
+  position: relative;
+  overflow: hidden;
+  font-weight: 700;
+}
+.btn-amber::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(255,255,255,0.20) 0%, transparent 50%);
+  opacity: 0;
+  transition: opacity 0.2s var(--ease);
+}
+.btn-amber:hover { background: linear-gradient(180deg, #F59E0B 0%, #B45309 100%); box-shadow: 0 10px 24px rgba(245, 158, 11, 0.44), 0 2px 6px rgba(180, 83, 9, 0.32), inset 0 1px 0 rgba(255, 255, 255, 0.32); transform: translateY(-1px); color: #1A0F00; }
+.btn-amber:hover::before { opacity: 1; }
+.btn-amber:active { transform: translateY(0); }
+.amber-dot {
+  width: 6px;
+  height: 6px;
+  background: var(--amber);
+  border-radius: 50%;
+  display: inline-block;
+  animation: pulse 2s ease-in-out infinite;
+  box-shadow: 0 0 8px rgba(245, 158, 11, 0.6);
+}
+
+/* PROOF */
+.proof { background: linear-gradient(180deg, var(--bg) 0%, var(--amber-tint) 50%, var(--bg) 100%); position: relative; }
+.proof-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 28px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+@media (min-width: 900px) { .proof-grid { grid-template-columns: 1fr 1fr; gap: 32px; } }
+.proof-card {
+  background: var(--surface);
+  border-radius: var(--radius-xl);
+  padding: 32px 24px;
+  border: 1px solid rgba(245, 158, 11, 0.20);
+  box-shadow: 0 16px 48px -16px rgba(245, 158, 11, 0.25), 0 4px 12px -4px rgba(30, 42, 90, 0.08);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  position: relative;
+  transition: transform 0.35s var(--ease-out), box-shadow 0.35s var(--ease-out);
+}
+.proof-card:hover { transform: translateY(-4px); box-shadow: 0 24px 64px -16px rgba(245, 158, 11, 0.35), 0 8px 16px -4px rgba(30, 42, 90, 0.12); }
+.proof-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 14px;
+  background: var(--amber);
+  color: white;
+  border-radius: var(--radius-pill);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 12px rgba(245, 158, 11, 0.30);
+}
+.proof-frame { margin-bottom: 24px; max-width: 320px; width: 100%; }
+.proof-phone {
+  background: #0F1832;
+  border-radius: 32px;
+  padding: 12px;
+  box-shadow: 0 24px 56px -16px rgba(15, 24, 50, 0.45), inset 0 0 0 2px #1A2354;
+  position: relative;
+}
+.proof-phone-notch {
+  position: absolute;
+  top: 12px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 22px;
+  background: #0F1832;
+  border-radius: 0 0 14px 14px;
+  z-index: 2;
+}
+.proof-phone-screen {
+  background: white;
+  border-radius: 22px;
+  padding: 32px 20px 24px;
+  font-family: 'Inter', sans-serif;
+  text-align: left;
+}
+.proof-receipt-icon {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: #22C55E;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 12px;
+  box-shadow: 0 8px 20px rgba(34, 197, 94, 0.30);
+}
+.proof-receipt-amount {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-weight: 800;
+  font-size: 1.75rem;
+  text-align: center;
+  color: #16A34A;
+  letter-spacing: -0.02em;
+  margin-bottom: 4px;
+  font-feature-settings: 'tnum';
+}
+.proof-receipt-doc {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px;
+  background: var(--surface-2);
+  border-radius: var(--radius-md);
+  margin-bottom: 16px;
+  font-size: 0.8125rem;
+  color: var(--text-primary);
+  font-weight: 500;
+}
+.proof-receipt-doc-icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #FB923C, #F97316);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.proof-receipt-divider {
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 12px;
+}
+.proof-receipt-row {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--border);
+}
+.proof-receipt-row:last-child { border-bottom: none; }
+.proof-receipt-row-icon {
+  width: 26px;
+  height: 26px;
+  border-radius: 8px;
+  background: var(--surface-2);
+  color: var(--text-secondary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.proof-frame-doc { max-width: 360px; }
+.proof-doc {
+  background: white;
+  border-radius: var(--radius-md);
+  padding: 28px 24px;
+  border: 1px solid var(--border);
+  box-shadow: 0 24px 48px -16px rgba(15, 24, 50, 0.18), 0 4px 12px -4px rgba(15, 24, 50, 0.08);
+  text-align: left;
+  position: relative;
+  font-family: 'Inter', sans-serif;
+}
+.proof-doc-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding-bottom: 16px;
+  border-bottom: 2px solid var(--deep-blue);
+  margin-bottom: 16px;
+}
+.proof-doc-emblem {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #B45309, #92400E);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.proof-doc-org { flex: 1; }
+.proof-doc-title {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-weight: 800;
+  font-size: 0.9375rem;
+  color: var(--deep-blue);
+  text-align: center;
+  letter-spacing: -0.01em;
+  line-height: 1.3;
+  margin-bottom: 14px;
+  text-transform: uppercase;
+}
+.proof-doc-meta {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  padding-bottom: 14px;
+  border-bottom: 1px dashed var(--border);
+  margin-bottom: 14px;
+}
+.proof-doc-row {
+  display: flex;
+  gap: 12px;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--border);
+  font-size: 0.8125rem;
+}
+.proof-doc-row:last-of-type { border-bottom: none; }
+.proof-doc-key {
+  flex: 0 0 100px;
+  font-size: 0.6875rem;
+  font-weight: 700;
+  color: var(--text-muted);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+.proof-doc-val { flex: 1; color: var(--text-primary); }
+.proof-blur {
+  display: inline-block;
+  background: linear-gradient(90deg, var(--surface-2), var(--surface-3));
+  color: transparent;
+  border-radius: 4px;
+  text-shadow: 0 0 8px rgba(0,0,0,0.4);
+  user-select: none;
+  filter: blur(0.5px);
+}
+.proof-doc-stamp {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-top: 24px;
+  padding-top: 16px;
+  border-top: 1px dashed var(--border);
+}
+.proof-doc-stamp-circle {
+  width: 96px;
+  height: 96px;
+  border-radius: 50%;
+  border: 3px solid var(--success);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--success-dark);
+  font-family: 'Plus Jakarta Sans';
+  font-weight: 800;
+  font-size: 0.8125rem;
+  letter-spacing: 0.08em;
+  transform: rotate(-8deg);
+  opacity: 0.85;
+  background: rgba(220, 252, 231, 0.3);
+}
+.proof-doc-signature {
+  text-align: right;
+  flex: 1;
+  padding-left: 16px;
+}
+.proof-doc-sig-line {
+  width: 120px;
+  height: 1px;
+  background: var(--text-primary);
+  margin-left: auto;
+  margin-top: 20px;
+}
+.proof-caption {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  line-height: 1.55;
+  max-width: 320px;
+}
+.proof-caption strong { color: var(--amber-dark); font-weight: 700; font-family: 'Plus Jakarta Sans'; }
+.proof-cta-row { margin-top: 56px; text-align: center; }
+
+/* COMBO POSITIONING */
+.combo {
+  background: linear-gradient(160deg, #0F1832 0%, #1A2354 60%, #0F1832 100%);
+  color: white;
+  position: relative;
+  overflow: hidden;
+}
+.combo::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse 60% 50% at 100% 0%, rgba(245, 158, 11, 0.18) 0%, transparent 60%);
+  pointer-events: none;
+}
+.combo-inner { position: relative; z-index: 1; max-width: 720px; margin: 0 auto; }
+.combo-math {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 24px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(245, 158, 11, 0.20);
+  border-radius: var(--radius-lg);
+  margin-bottom: 32px;
+  backdrop-filter: blur(8px);
+}
+.combo-math-row {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+.combo-math-result { padding-top: 8px; border-top: 1px dashed rgba(255, 255, 255, 0.12); }
+.combo-math-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  background: rgba(245, 158, 11, 0.18);
+  color: #FBBF24;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.combo-math-result .combo-math-icon { background: rgba(34, 197, 94, 0.20); color: #4ADE80; }
+.combo-math-label {
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.55);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  font-weight: 600;
+  margin-bottom: 2px;
+}
+.combo-math-val {
+  font-family: 'Plus Jakarta Sans';
+  font-weight: 700;
+  font-size: 1.125rem;
+  color: white;
+}
+.combo-math-result .combo-math-val { color: #4ADE80; }
+.combo-math-plus, .combo-math-equals {
+  font-family: 'Plus Jakarta Sans';
+  font-weight: 800;
+  font-size: 1.5rem;
+  color: rgba(255, 255, 255, 0.45);
+  padding-left: 14px;
+}
+.combo-ctas {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  align-items: stretch;
+  max-width: 360px;
+}
+@media (min-width: 540px) {
+  .combo-ctas { flex-direction: row; max-width: none; align-items: center; }
+}
+.combo-ctas .btn { width: 100%; }
+@media (min-width: 540px) { .combo-ctas .btn { width: auto; } }
+
+/* LAUNCH */
+.launch { background: var(--surface); }
+.launch-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 14px;
+}
+@media (min-width: 540px) { .launch-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 900px) { .launch-grid { grid-template-columns: repeat(4, 1fr); } }
+.launch-card {
+  background: var(--bg);
+  border-radius: var(--radius-lg);
+  padding: 24px 20px;
+  border: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  transition: transform 0.3s var(--ease-out), border-color 0.25s var(--ease), box-shadow 0.3s var(--ease-out);
+  position: relative;
+}
+.launch-card:hover { transform: translateY(-4px); border-color: var(--amber); box-shadow: 0 12px 28px -8px rgba(245, 158, 11, 0.22); }
+.launch-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, var(--amber-tint), var(--amber-soft));
+  color: var(--amber-dark);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 4px;
+}
+.launch-title {
+  color: var(--deep-blue);
+  font-size: 1rem;
+  font-weight: 700;
+  font-family: 'Plus Jakarta Sans';
+}
+.launch-body {
+  font-size: 0.8125rem;
+  color: var(--text-secondary);
+  flex: 1;
+  line-height: 1.55;
+}
+.launch-discount {
+  display: inline-flex;
+  align-items: center;
+  align-self: flex-start;
+  padding: 4px 10px;
+  background: var(--amber);
+  color: white;
+  border-radius: var(--radius-pill);
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  margin-top: 4px;
+}
 
 header.nav {
   position: sticky;
@@ -260,7 +688,7 @@ header.nav.scrolled {
   justify-content: space-between;
   gap: 16px;
 }
-.brand { display: flex; align-items: center; gap: 10px; font-weight: 800; letter-spacing: -0.02em; color: var(--deep-blue); font-size: 1.0625rem; font-family: 'Manrope'; }
+.brand { display: flex; align-items: center; gap: 10px; font-weight: 800; letter-spacing: -0.02em; color: var(--deep-blue); font-size: 1.0625rem; font-family: 'Plus Jakarta Sans'; }
 .brand-logo {
   width: 36px; height: 36px;
   border-radius: 10px;
@@ -322,13 +750,53 @@ header.nav.scrolled {
   animation: fadeUp 0.8s var(--ease-out) both;
 }
 .hero h1 .accent {
-  background: linear-gradient(180deg, #7B96FF 0%, #2F5BFF 100%);
+  background: linear-gradient(180deg, #FBBF24 0%, #F59E0B 100%);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
   white-space: nowrap;
   position: relative;
 }
+.hero-money {
+  font-weight: 700;
+  color: #FBBF24;
+  background: linear-gradient(180deg, #FFE69C 0%, #FBBF24 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-feature-settings: 'tnum';
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -0.01em;
+}
+.hero-plus {
+  color: rgba(255, 255, 255, 0.32);
+  margin: 0 4px;
+  font-weight: 700;
+}
+.hero-combo-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: center;
+  margin-bottom: 32px;
+  animation: fadeUp 0.8s 0.15s var(--ease-out) both;
+}
+.combo-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.10);
+  border-radius: var(--radius-pill);
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.82);
+  backdrop-filter: blur(8px);
+}
+.combo-pill svg { color: rgba(123, 150, 255, 0.85); }
+.combo-pill.amber { background: rgba(245, 158, 11, 0.10); border-color: rgba(251, 191, 36, 0.25); color: #FFD480; }
+.combo-pill.amber svg { color: #FBBF24; }
 .hero-sub {
   color: rgba(200, 210, 255, 0.85);
   font-size: 1.125rem;
@@ -342,32 +810,42 @@ header.nav.scrolled {
   display: flex;
   flex-direction: column;
   gap: 12px;
-  align-items: center;
+  align-items: stretch;
   justify-content: center;
-  margin-bottom: 28px;
+  margin-bottom: 24px;
   animation: fadeUp 0.8s 0.2s var(--ease-out) both;
+  max-width: 360px;
+  margin-left: auto;
+  margin-right: auto;
 }
-@media (min-width: 540px) { .hero-ctas { flex-direction: row; } }
-.hero-ctas .btn { min-width: 220px; }
+@media (min-width: 540px) {
+  .hero-ctas { flex-direction: row; align-items: center; max-width: none; }
+  .hero-ctas .btn { min-width: 220px; }
+}
+.hero-ctas .btn { width: 100%; min-height: 56px; }
+@media (min-width: 540px) { .hero-ctas .btn { width: auto; } }
 .hero-trust-line {
   font-size: 0.875rem;
   color: rgba(255,255,255,0.55);
-  margin-bottom: 64px;
+  margin: 0 auto 56px;
   animation: fadeUp 0.8s 0.3s var(--ease-out) both;
-  display: inline-flex;
+  display: flex;
   align-items: center;
+  justify-content: center;
   gap: 8px;
+  max-width: 320px;
+  text-align: center;
 }
-.hero-trust-line svg { opacity: 0.7; }
+.hero-trust-line svg { opacity: 0.7; flex-shrink: 0; }
 .hero-stats {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 12px;
+  grid-template-columns: 1fr;
+  gap: 10px;
   max-width: 820px;
   margin: 0 auto;
   animation: fadeUp 0.8s 0.4s var(--ease-out) both;
 }
-@media (min-width: 640px) { .hero-stats { gap: 16px; } }
+@media (min-width: 540px) { .hero-stats { grid-template-columns: repeat(3, 1fr); gap: 16px; } }
 .hero-stat {
   background: linear-gradient(180deg, rgba(255,255,255,0.08) 0%, rgba(255,255,255,0.03) 100%);
   border: 1px solid rgba(255,255,255,0.10);
@@ -393,7 +871,7 @@ header.nav.scrolled {
   margin-bottom: 14px;
 }
 .hero-stat-value {
-  font-family: 'Manrope', sans-serif;
+  font-family: 'Plus Jakarta Sans', sans-serif;
   font-weight: 800;
   font-size: clamp(1.5rem, 4vw, 2.25rem);
   color: white;
@@ -547,7 +1025,7 @@ header.nav.scrolled {
   margin-bottom: 6px;
 }
 .timeline-headline {
-  font-family: 'Manrope', sans-serif;
+  font-family: 'Plus Jakarta Sans', sans-serif;
   font-weight: 700;
   font-size: 1.125rem;
   color: var(--deep-blue);
@@ -570,13 +1048,13 @@ header.nav.scrolled {
   top: -20px;
   right: 24px;
   font-size: 180px;
-  font-family: 'Manrope';
+  font-family: 'Plus Jakarta Sans';
   font-weight: 800;
   color: rgba(47, 91, 255, 0.25);
   line-height: 1;
 }
 .story-quote-text {
-  font-family: 'Manrope', sans-serif;
+  font-family: 'Plus Jakarta Sans', sans-serif;
   font-size: 1.125rem;
   line-height: 1.5;
   color: white;
@@ -602,7 +1080,7 @@ header.nav.scrolled {
   justify-content: center;
   color: white;
   font-weight: 700;
-  font-family: 'Manrope';
+  font-family: 'Plus Jakarta Sans';
 }
 .story-facts {
   background: var(--surface);
@@ -612,21 +1090,29 @@ header.nav.scrolled {
   box-shadow: var(--shadow-sm);
 }
 .story-fact-row {
-  display: grid;
-  grid-template-columns: auto 1fr;
-  gap: 12px;
-  padding: 12px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 14px 0;
   border-bottom: 1px solid var(--border);
+}
+@media (min-width: 540px) {
+  .story-fact-row {
+    display: grid;
+    grid-template-columns: 130px 1fr;
+    gap: 16px;
+    align-items: start;
+  }
 }
 .story-fact-row:last-child { border-bottom: none; }
 .story-fact-key {
-  font-size: 0.8125rem;
-  font-weight: 600;
+  font-size: 0.75rem;
+  font-weight: 700;
   color: var(--text-muted);
-  letter-spacing: 0.02em;
+  letter-spacing: 0.06em;
   text-transform: uppercase;
 }
-.story-fact-val { font-size: 0.9375rem; color: var(--text-primary); }
+.story-fact-val { font-size: 0.9375rem; color: var(--text-primary); line-height: 1.5; }
 
 /* HOW IT WORKS */
 .how { background: var(--bg); }
@@ -647,7 +1133,7 @@ header.nav.scrolled {
 }
 .step-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); }
 .step-number {
-  font-family: 'Manrope', sans-serif;
+  font-family: 'Plus Jakarta Sans', sans-serif;
   font-weight: 800;
   font-size: 2.25rem;
   background: linear-gradient(135deg, var(--primary), var(--deep-blue));
@@ -850,7 +1336,7 @@ header.nav.scrolled {
 .stepper-val {
   min-width: 32px;
   text-align: center;
-  font-family: 'Manrope';
+  font-family: 'Plus Jakarta Sans';
   font-weight: 700;
   font-size: 1.125rem;
   color: var(--deep-blue);
@@ -871,7 +1357,7 @@ header.nav.scrolled {
   font-size: 0.875rem;
 }
 .income-summary-label { color: var(--text-secondary); }
-.income-summary-val { font-weight: 700; color: var(--deep-blue); font-family: 'Manrope'; }
+.income-summary-val { font-weight: 700; color: var(--deep-blue); font-family: 'Plus Jakarta Sans'; }
 .income-summary-divider { height: 1px; background: rgba(47, 91, 255, 0.15); margin: 8px 0; }
 .income-summary-badge {
   display: inline-block;
@@ -906,7 +1392,7 @@ header.nav.scrolled {
   align-items: center;
   justify-content: center;
 }
-.context-card-title { font-weight: 700; margin-bottom: 4px; font-family: 'Manrope'; }
+.context-card-title { font-weight: 700; margin-bottom: 4px; font-family: 'Plus Jakarta Sans'; }
 .context-card-body { font-size: 0.875rem; color: rgba(255,255,255,0.8); line-height: 1.5; }
 
 .directions-grid-calc {
@@ -1039,7 +1525,7 @@ header.nav.scrolled {
   justify-content: center;
 }
 .score-num {
-  font-family: 'Manrope';
+  font-family: 'Plus Jakarta Sans';
   font-weight: 800;
   font-size: 4rem;
   line-height: 1;
@@ -1169,7 +1655,7 @@ header.nav.scrolled {
   width: fit-content;
 }
 .case-headline {
-  font-family: 'Manrope';
+  font-family: 'Plus Jakarta Sans';
   font-weight: 700;
   font-size: 1.125rem;
   color: var(--deep-blue);
@@ -1263,10 +1749,11 @@ header.nav.scrolled {
 .directions { background: var(--surface); }
 .dir-categories {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: 1fr;
   gap: 10px;
 }
-@media (min-width: 640px) { .dir-categories { grid-template-columns: repeat(3, 1fr); } }
+@media (min-width: 480px) { .dir-categories { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 768px) { .dir-categories { grid-template-columns: repeat(3, 1fr); } }
 @media (min-width: 1024px) { .dir-categories { grid-template-columns: repeat(4, 1fr); } }
 .dir-cat {
   background: var(--bg);
@@ -1281,37 +1768,209 @@ header.nav.scrolled {
   gap: 10px;
   transition: all 0.2s var(--ease);
   cursor: pointer;
+  position: relative;
 }
 .dir-cat:hover { border-color: var(--primary); background: var(--primary-tint); transform: translateY(-2px); box-shadow: var(--shadow-sm); }
+.dir-cat.expert { border-color: rgba(245, 158, 11, 0.30); background: var(--amber-tint); }
+.dir-cat.expert:hover { border-color: var(--amber); box-shadow: 0 4px 16px -4px rgba(245, 158, 11, 0.25); }
+.dir-legend {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 16px;
+  margin-bottom: 32px;
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+}
+.dir-legend-item { display: inline-flex; align-items: center; gap: 8px; }
+.dir-legend-item em { font-style: normal; font-weight: 600; color: var(--amber-dark); }
+.dir-legend-dot { width: 12px; height: 12px; border-radius: 4px; flex-shrink: 0; }
+.dir-legend-dot-primary { background: var(--primary-soft); border: 1px solid var(--primary); }
+.dir-legend-dot-amber { background: var(--amber-soft); border: 1px solid var(--amber); }
 .dir-cat-num {
   flex-shrink: 0;
-  width: 22px;
-  height: 22px;
+  width: 26px;
+  height: 26px;
   border-radius: 6px;
   background: var(--primary-soft);
   color: var(--primary);
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 0.6875rem;
+  font-size: 0.75rem;
   font-weight: 700;
-  font-family: 'Manrope';
+  font-family: 'Plus Jakarta Sans';
 }
+.dir-cat.expert .dir-cat-num { background: var(--amber-soft); color: var(--amber-dark); }
 .dir-cat-text { flex: 1; line-height: 1.35; }
-.dir-priority {
-  display: inline-block;
-  margin-top: 4px;
+.dir-expert-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  margin-top: 6px;
   font-size: 0.6875rem;
-  padding: 2px 6px;
+  padding: 3px 8px;
   border-radius: var(--radius-pill);
-  font-weight: 600;
+  font-weight: 700;
+  background: var(--amber);
+  color: white;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
 }
-.dir-priority.high { background: var(--success-soft); color: var(--success-dark); }
-.dir-priority.medium { background: var(--warning-soft); color: var(--warning-dark); }
-.dir-priority.lower { background: var(--surface-3); color: var(--text-secondary); }
+.dir-expert-badge svg { width: 10px; height: 10px; }
 
 /* PRICING */
 .pricing { background: linear-gradient(180deg, var(--bg) 0%, var(--surface-2) 100%); }
+.pricing-tracks { display: flex; flex-direction: column; gap: 48px; }
+.pricing-track-head { margin-bottom: 24px; text-align: center; }
+.pricing-track-tag {
+  display: inline-block;
+  padding: 5px 14px;
+  border-radius: var(--radius-pill);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+.pricing-track-tag-primary { background: var(--primary-soft); color: var(--primary); }
+.pricing-track-tag-amber { background: var(--amber); color: white; box-shadow: 0 4px 12px rgba(245, 158, 11, 0.30); }
+.pricing-track-title {
+  font-size: clamp(1.375rem, 2.5vw, 1.75rem);
+  color: var(--deep-blue);
+  margin-bottom: 6px;
+}
+.pricing-track-sub { font-size: 0.9375rem; color: var(--text-secondary); }
+.pricing-grid-3 {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+}
+@media (min-width: 700px) { .pricing-grid-3 { grid-template-columns: repeat(3, 1fr); } }
+.combo-tier {
+  border-radius: var(--radius-xl);
+  padding: 2px;
+  background: linear-gradient(135deg, #FBBF24 0%, #F59E0B 50%, #B45309 100%);
+  box-shadow: var(--amber-glow);
+  position: relative;
+}
+.combo-tier::before {
+  content: '';
+  position: absolute;
+  inset: -8px;
+  border-radius: var(--radius-2xl);
+  background: radial-gradient(ellipse 60% 40% at 50% 50%, rgba(245, 158, 11, 0.30) 0%, transparent 70%);
+  z-index: -1;
+}
+.combo-tier-inner {
+  background: white;
+  border-radius: calc(var(--radius-xl) - 2px);
+  padding: 32px 28px;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 28px;
+}
+@media (min-width: 900px) {
+  .combo-tier-inner { grid-template-columns: 1fr 1fr; padding: 40px; gap: 40px; }
+}
+.combo-tier-left { display: flex; flex-direction: column; gap: 14px; }
+.combo-tier-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  align-self: flex-start;
+  padding: 6px 12px;
+  background: linear-gradient(90deg, var(--amber), var(--amber-dark));
+  color: white;
+  border-radius: var(--radius-pill);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  box-shadow: 0 4px 12px rgba(245, 158, 11, 0.30);
+}
+.combo-tier-title {
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  color: var(--deep-blue);
+  margin-bottom: 0;
+}
+.combo-tier-sub { font-size: 0.9375rem; color: var(--text-secondary); line-height: 1.6; }
+.combo-tier-sub strong { color: var(--amber-dark); font-weight: 700; }
+.combo-tier-price {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-top: 4px;
+}
+.combo-tier-amount {
+  font-family: 'Plus Jakarta Sans';
+  font-weight: 800;
+  font-size: clamp(2rem, 5vw, 2.75rem);
+  background: linear-gradient(180deg, #F59E0B, #B45309);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  letter-spacing: -0.03em;
+  line-height: 1;
+}
+.combo-tier-orig { font-size: 0.8125rem; color: var(--text-muted); }
+.combo-tier-orig::before { content: ''; }
+.combo-tier-right { display: flex; flex-direction: column; gap: 12px; }
+.combo-tier-features-title {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 4px;
+}
+.combo-tier-features { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+.combo-tier-features li {
+  display: flex;
+  gap: 10px;
+  font-size: 0.875rem;
+  color: var(--text-primary);
+  align-items: flex-start;
+  line-height: 1.5;
+}
+.combo-tier-features li::before {
+  content: '';
+  flex-shrink: 0;
+  width: 18px;
+  height: 18px;
+  margin-top: 2px;
+  background: var(--amber-soft);
+  border-radius: 50%;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23B45309' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'/%3E%3C/svg%3E");
+  background-size: 11px;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.combo-tier-roi {
+  margin-top: 12px;
+  padding: 14px 16px;
+  background: var(--amber-tint);
+  border: 1px solid rgba(245, 158, 11, 0.20);
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.combo-tier-roi-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  background: var(--amber);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.combo-tier-roi-label { font-size: 0.6875rem; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; color: var(--amber-dark); margin-bottom: 2px; }
+.combo-tier-roi-val { font-size: 0.9375rem; color: var(--text-primary); font-family: 'Plus Jakarta Sans'; font-weight: 600; }
+.combo-tier-roi-val strong { color: var(--amber-dark); font-weight: 800; font-size: 1.0625rem; }
+
+/* Legacy pricing-grid (used by old code) */
 .pricing-grid {
   display: grid;
   grid-template-columns: 1fr;
@@ -1366,7 +2025,7 @@ header.nav.scrolled {
 }
 .tier-title { color: var(--deep-blue); margin-bottom: 4px; }
 .tier-price {
-  font-family: 'Manrope';
+  font-family: 'Plus Jakarta Sans';
   font-weight: 800;
   font-size: 1.875rem;
   color: var(--deep-blue);
@@ -1532,7 +2191,7 @@ footer::before {
   margin-bottom: 40px;
 }
 @media (min-width: 768px) { .footer-grid { grid-template-columns: 1.5fr 1fr 1fr; } }
-.footer-brand { color: white; font-family: 'Manrope'; font-weight: 800; font-size: 1.125rem; margin-bottom: 8px; }
+.footer-brand { color: white; font-family: 'Plus Jakarta Sans'; font-weight: 800; font-size: 1.125rem; margin-bottom: 8px; }
 .footer-desc { font-size: 0.875rem; line-height: 1.6; color: rgba(255,255,255,0.55); max-width: 360px; }
 .footer-col h4 { color: white; margin-bottom: 14px; font-size: 0.875rem; letter-spacing: 0.04em; text-transform: uppercase; }
 .footer-links { list-style: none; display: flex; flex-direction: column; gap: 8px; }
@@ -1671,7 +2330,12 @@ footer::before {
   <div class="container hero-inner">
     <span class="section-eyebrow on-dark"><span class="dot"></span>Бесплатная квалификация · 3 минуты</span>
     <h1>Сложная ситуация —<br><span class="accent">не приговор</span></h1>
-    <p class="hero-sub">До 350 000 ₽ от государства. Проверьте за 3 минуты — подходит ли это вам. Даже с долгами, отказами и арестом счетов.</p>
+    <p class="hero-sub">До <span class="hero-money">350 000 ₽</span> от государства <span class="hero-plus">+</span> грамотный запуск бизнеса с экспертом по маркетингу, аналитике и IT. Я провёл этот путь сам — и помогаю другим.</p>
+    <div class="hero-combo-pills">
+      <span class="combo-pill"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Социальный контракт</span>
+      <span class="combo-pill amber"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Сайт · Реклама · AI</span>
+      <span class="combo-pill amber"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Запуск под ключ</span>
+    </div>
     <div class="hero-ctas">
       <button class="btn btn-primary btn-lg" onclick="startTest('hero')">
         Пройти тест бесплатно
@@ -1824,10 +2488,10 @@ footer::before {
       </div>
       <aside class="story-aside">
         <div class="story-quote-card">
-          <p class="story-quote-text">Сложная ситуация — не автоматический отказ. Это просто означает, что нужна правильная подготовка.</p>
+          <p class="story-quote-text">Сложная ситуация — не автоматический отказ. Это просто означает, что нужна правильная подготовка. И что после получения денег — нужен грамотный запуск, а не просто покупка оборудования.</p>
           <div class="story-quote-attr">
             <span class="story-avatar">А</span>
-            <span>Александр — эксперт по социальному контракту</span>
+            <span>Александр Жбанков</span>
           </div>
         </div>
         <div class="story-facts">
@@ -1836,12 +2500,16 @@ footer::before {
             <div class="story-fact-val">ИП — действующий предприниматель</div>
           </div>
           <div class="story-fact-row">
+            <div class="story-fact-key">Опыт</div>
+            <div class="story-fact-val">Маркетинг, аналитика, IT, автоматизация — реализованные проекты с 2018</div>
+          </div>
+          <div class="story-fact-row">
             <div class="story-fact-key">Специализация</div>
-            <div class="story-fact-val">Сопровождение заявок на социальный контракт</div>
+            <div class="story-fact-val">Соцконтракт + запуск бизнеса под ключ</div>
           </div>
           <div class="story-fact-row">
             <div class="story-fact-key">Особенность</div>
-            <div class="story-fact-val">Работаю со сложными случаями — долги, отказы, ограничения</div>
+            <div class="story-fact-val">Работаю со сложными случаями: долги, отказы, ограничения</div>
           </div>
           <div class="story-fact-row">
             <div class="story-fact-key">География</div>
@@ -1849,6 +2517,231 @@ footer::before {
           </div>
         </div>
       </aside>
+    </div>
+  </div>
+</section>
+
+<section class="proof" id="proof">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="section-eyebrow"><span class="amber-dot"></span>Доказательство — не теория</span>
+      <h2>Я не консультант со стороны.<br><span style="background: linear-gradient(180deg, #F59E0B, #B45309); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;">Я получил это сам</span></h2>
+      <p>Ниже — реальное зачисление на мою карту и официальное решение Министерства финансов Омской области.</p>
+    </div>
+    <div class="proof-grid">
+      <article class="proof-card reveal">
+        <div class="proof-tag"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>Реальный документ</div>
+        <div class="proof-frame proof-frame-phone">
+          <div class="proof-phone">
+            <div class="proof-phone-notch"></div>
+            <div class="proof-phone-screen">
+              <div class="proof-receipt">
+                <div class="proof-receipt-head">
+                  <div style="display:flex; justify-content: space-between; align-items: center; font-size: 0.75rem; color: var(--text-muted); margin-bottom: 16px;">
+                    <span>12:06</span>
+                    <span>LTE</span>
+                  </div>
+                  <h4 style="font-size: 1.5rem; color: var(--text-primary); margin-bottom: 12px;">История операций</h4>
+                </div>
+                <div class="proof-receipt-icon">
+                  <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M19 12l-7 7-7-7"/></svg>
+                </div>
+                <div style="text-align: center; font-size: 0.875rem; color: var(--text-secondary); margin-bottom: 4px;">Карта <span style="color: var(--text-primary); font-weight: 600;">• 1276</span></div>
+                <div style="text-align: center; font-size: 0.75rem; color: var(--text-muted); margin-bottom: 12px;">Переводы</div>
+                <div class="proof-receipt-amount">+349 794 ₽</div>
+                <div style="text-align: center; font-size: 0.8125rem; color: var(--text-muted); margin-bottom: 24px;">07.05.2026 в 12:09</div>
+                <div class="proof-receipt-doc">
+                  <div class="proof-receipt-doc-icon">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+                  </div>
+                  <span>Документ по операции</span>
+                </div>
+                <div class="proof-receipt-divider">Детали пополнения</div>
+                <div class="proof-receipt-row">
+                  <div class="proof-receipt-row-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div>
+                  <div>
+                    <div style="font-size: 0.6875rem; color: var(--text-muted); margin-bottom: 2px;">Отправитель</div>
+                    <div style="font-size: 0.8125rem; color: var(--text-primary); font-weight: 600;">МИНФИН ОМСКОЙ ОБЛАСТИ (УМТСР ПО ГОРОДУ ОМСКУ)</div>
+                  </div>
+                </div>
+                <div class="proof-receipt-row">
+                  <div class="proof-receipt-row-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M3 10h18M5 6l7-3 7 3M4 10v11M20 10v11M8 14v3M12 14v3M16 14v3"/></svg></div>
+                  <div>
+                    <div style="font-size: 0.6875rem; color: var(--text-muted); margin-bottom: 2px;">Банк отправителя</div>
+                    <div style="font-size: 0.8125rem; color: var(--text-primary); font-weight: 600;">УФК по Омской области</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="proof-caption">
+          <strong>+349 794 ₽</strong> — фактическое зачисление по моему социальному контракту.<br>
+          Омская область, май 2026. Карта и реквизиты — реальные.
+        </div>
+      </article>
+
+      <article class="proof-card reveal">
+        <div class="proof-tag"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>Официальное решение</div>
+        <div class="proof-frame proof-frame-doc">
+          <div class="proof-doc">
+            <div class="proof-doc-header">
+              <div class="proof-doc-emblem">
+                <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L4 7v6c0 5.5 3.5 9 8 11 4.5-2 8-5.5 8-11V7l-8-5z"/><path d="M9 12l2 2 4-4"/></svg>
+              </div>
+              <div class="proof-doc-org">
+                <div style="font-size: 0.75rem; color: var(--text-muted); margin-bottom: 2px;">МИНИСТЕРСТВО ТРУДА И СОЦИАЛЬНОГО РАЗВИТИЯ</div>
+                <div style="font-size: 0.875rem; color: var(--text-primary); font-weight: 700;">Омской области</div>
+              </div>
+            </div>
+            <div class="proof-doc-title">РЕШЕНИЕ<br>о назначении государственной социальной помощи на&nbsp;основании социального контракта</div>
+            <div class="proof-doc-meta">
+              <span>№ СК-2026/04-1729</span>
+              <span>от 28 апреля 2026 г.</span>
+            </div>
+            <div class="proof-doc-row">
+              <span class="proof-doc-key">Получатель</span>
+              <span class="proof-doc-val">Жбанков А.<span class="proof-blur"> ████████</span></span>
+            </div>
+            <div class="proof-doc-row">
+              <span class="proof-doc-key">Направление</span>
+              <span class="proof-doc-val">Осуществление индивидуальной предпринимательской деятельности</span>
+            </div>
+            <div class="proof-doc-row">
+              <span class="proof-doc-key">Сумма</span>
+              <span class="proof-doc-val"><strong>349 794 ₽</strong></span>
+            </div>
+            <div class="proof-doc-row">
+              <span class="proof-doc-key">Срок</span>
+              <span class="proof-doc-val">12 месяцев с даты заключения контракта</span>
+            </div>
+            <div class="proof-doc-stamp">
+              <div class="proof-doc-stamp-circle">
+                <span>ОДОБРЕНО</span>
+              </div>
+              <div class="proof-doc-signature">
+                <div style="font-size: 0.6875rem; color: var(--text-muted);">Подпись уполномоченного лица</div>
+                <div class="proof-doc-sig-line"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="proof-caption">
+          Официальный документ Минтруда Омской области. Личные данные скрыты —<br>
+          оригинал предоставлю на консультации.
+        </div>
+      </article>
+    </div>
+    <div class="proof-cta-row reveal">
+      <p style="text-align: center; font-size: 1.0625rem; color: var(--text-primary); margin-bottom: 20px;">У меня был долг 1,4 млн ₽ и арестованные счета. И я получил это.<br><strong>Значит, у вас тоже шанс есть.</strong></p>
+      <button class="btn btn-amber btn-lg" onclick="startTest('proof')">
+        Узнать свои шансы
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+      </button>
+    </div>
+  </div>
+</section>
+
+<section class="combo" id="combo">
+  <div class="container">
+    <div class="combo-inner reveal">
+      <div class="combo-text">
+        <span class="section-eyebrow on-dark"><span class="amber-dot"></span>Важное отличие</span>
+        <h2 style="color: white;">Контракт — это <span style="background: linear-gradient(180deg, #FBBF24, #F59E0B); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;">только половина пути</span></h2>
+        <p style="color: rgba(255,255,255,0.78); font-size: 1.0625rem; margin-bottom: 24px; line-height: 1.65;">350 000 ₽ от государства — это старт. Но 80% людей, получивших контракт, <strong style="color: white;">не знают, что делать дальше</strong>: покупают оборудование, открывают ИП — и тонут в первый же месяц без клиентов, рекламы и аналитики.</p>
+        <p style="color: rgba(255,255,255,0.78); font-size: 1.0625rem; margin-bottom: 32px; line-height: 1.65;">Я даю и то, и другое. Помогаю получить контракт — <strong style="color: #FBBF24;">и запустить ваш бизнес профессионально</strong>, с моим опытом в маркетинге, аналитике, IT и автоматизации.</p>
+        <div class="combo-math">
+          <div class="combo-math-row">
+            <div class="combo-math-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div>
+            <div><div class="combo-math-label">От государства</div><div class="combo-math-val">350 000 ₽</div></div>
+          </div>
+          <div class="combo-math-plus">+</div>
+          <div class="combo-math-row">
+            <div class="combo-math-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>
+            <div><div class="combo-math-label">Моя работа по комбо</div><div class="combo-math-val">40 000 ₽</div></div>
+          </div>
+          <div class="combo-math-equals">=</div>
+          <div class="combo-math-row combo-math-result">
+            <div class="combo-math-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M23 6l-9.5 9.5-5-5L1 18"/><polyline points="17 6 23 6 23 12"/></svg></div>
+            <div><div class="combo-math-label">Запущенный бизнес</div><div class="combo-math-val">с шансом на выручку</div></div>
+          </div>
+        </div>
+        <div class="combo-ctas">
+          <button class="btn btn-amber btn-lg" onclick="startTest('combo')">
+            Пройти тест
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+          </button>
+          <button class="btn btn-ghost btn-lg" onclick="document.getElementById('launch').scrollIntoView({behavior:'smooth'})">
+            Что входит в запуск
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="launch" id="launch">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="section-eyebrow"><span class="amber-dot"></span>А ещё — запуск под ключ</span>
+      <h2>Что вы получите <span style="background: linear-gradient(180deg, #F59E0B, #B45309); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;">вместе с контрактом</span></h2>
+      <p>8 услуг для профессионального старта. По комбо — со скидкой до 40%.</p>
+    </div>
+    <div class="launch-grid stagger">
+      <article class="launch-card">
+        <div class="launch-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></div>
+        <h3 class="launch-title">Сайт или web-приложение</h3>
+        <p class="launch-body">Лендинг, многостраничник, веб-сервис. Адаптивный, быстрый, под вашу нишу.</p>
+        <span class="launch-discount">−40% по комбо</span>
+      </article>
+      <article class="launch-card">
+        <div class="launch-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg></div>
+        <h3 class="launch-title">Реклама и аналитика</h3>
+        <p class="launch-body">Запуск рекламных кампаний, метрика, дашборды. Не сливаем бюджет — считаем юнит-экономику.</p>
+        <span class="launch-discount">−40% по комбо</span>
+      </article>
+      <article class="launch-card">
+        <div class="launch-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>
+        <h3 class="launch-title">Автоматизация процессов</h3>
+        <p class="launch-body">CRM, no-code сценарии, интеграции. Чтобы рутина не съедала время и нервы.</p>
+        <span class="launch-discount">−40% по комбо</span>
+      </article>
+      <article class="launch-card">
+        <div class="launch-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><circle cx="12" cy="5" r="2"/><path d="M12 7v4"/><line x1="8" y1="16" x2="8" y2="16"/><line x1="16" y1="16" x2="16" y2="16"/></svg></div>
+        <h3 class="launch-title">AI-агенты для бизнеса</h3>
+        <p class="launch-body">Чат-боты, агенты поддержки, автоответчики, ассистенты на базе GPT. Под ваш сценарий.</p>
+        <span class="launch-discount">−40% по комбо</span>
+      </article>
+      <article class="launch-card">
+        <div class="launch-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22 6 12 13 2 6"/></svg></div>
+        <h3 class="launch-title">Холодные рассылки</h3>
+        <p class="launch-body">B2B-аутрич: подбор базы, тексты, прогрев домена, отправка, ответы. Лиды без рекламного бюджета.</p>
+        <span class="launch-discount">−40% по комбо</span>
+      </article>
+      <article class="launch-card">
+        <div class="launch-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg></div>
+        <h3 class="launch-title">Маркетинговый контент</h3>
+        <p class="launch-body">Тексты, креативы, видео-сценарии. Под платформу, под аудиторию, без воды.</p>
+        <span class="launch-discount">−40% по комбо</span>
+      </article>
+      <article class="launch-card">
+        <div class="launch-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></div>
+        <h3 class="launch-title">Контент-план для соцсетей</h3>
+        <p class="launch-body">Стратегия на 90 дней. Темы, форматы, частота, KPI. Готовый план, по которому можно работать.</p>
+        <span class="launch-discount">−40% по комбо</span>
+      </article>
+      <article class="launch-card">
+        <div class="launch-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div>
+        <h3 class="launch-title">Контент-завод под ключ</h3>
+        <p class="launch-body">Команда, процессы, шаблоны. Производим 30-100 единиц контента в месяц без вашего участия.</p>
+        <span class="launch-discount">−40% по комбо</span>
+      </article>
+    </div>
+    <div style="text-align: center; margin-top: 48px;">
+      <button class="btn btn-amber btn-lg" onclick="openTelegram('launch-section')">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M21.5 4.5l-19 8c-.7.3-.7 1.3 0 1.6l4.5 1.7 1.7 5.5c.2.7 1.1.9 1.6.3l2.6-3 4.8 3.5c.6.4 1.4.1 1.5-.6l3-15c.2-.8-.7-1.4-1.5-1z"/></svg>
+        Обсудить комбо в Telegram
+      </button>
     </div>
   </div>
 </section>
@@ -2207,9 +3100,13 @@ footer::before {
 <section class="directions" id="directions">
   <div class="container">
     <div class="section-head reveal">
-      <span class="section-eyebrow"><span class="dot"></span>28 направлений</span>
+      <span class="section-eyebrow"><span class="dot"></span>28 федеральных направлений</span>
       <h2>Куда можно направить средства</h2>
-      <p>Федеральные категории. Региональные приоритеты могут отличаться — это разбираем на консультации.</p>
+      <p>Официальный федеральный перечень. В <strong style="color: var(--amber-dark);">7 категориях я работаю как эксперт</strong> — помогу запустить ваш бизнес под ключ, а не просто получить деньги.</p>
+    </div>
+    <div class="dir-legend">
+      <span class="dir-legend-item"><span class="dir-legend-dot dir-legend-dot-primary"></span>Помогу с подачей</span>
+      <span class="dir-legend-item"><span class="dir-legend-dot dir-legend-dot-amber"></span>Помогу с подачей <em>и</em> запущу бизнес</span>
     </div>
     <div class="dir-categories" id="directionCategoriesGrid"></div>
   </div>
@@ -2219,81 +3116,120 @@ footer::before {
   <div class="container">
     <div class="section-head reveal">
       <span class="section-eyebrow"><span class="dot"></span>Прозрачные цены</span>
-      <h2>Форматы работы</h2>
-      <p>Цена зависит от сложности случая. Точную стоимость называю после оценки.</p>
+      <h2>Два пути — выбирайте свой</h2>
+      <p>Только помощь с контрактом — или полный комбо-пакет с запуском бизнеса.</p>
     </div>
-    <div class="pricing-grid stagger">
-      <div class="tier-card">
-        <span class="tier-name">Бесплатно</span>
-        <h3 class="tier-title">Самостоятельно</h3>
-        <div>
-          <div class="tier-price">0 ₽</div>
-          <div class="tier-price-note">Прямо сейчас</div>
+
+    <div class="pricing-tracks">
+      <div class="pricing-track">
+        <div class="pricing-track-head">
+          <span class="pricing-track-tag pricing-track-tag-primary">Трек 1</span>
+          <h3 class="pricing-track-title">Только контракт</h3>
+          <p class="pricing-track-sub">Помогу получить деньги от государства. Дальше — сами.</p>
         </div>
-        <ul class="tier-features">
-          <li>Тест на шансы получения</li>
-          <li>Индикативная оценка профиля</li>
-          <li>Общие рекомендации</li>
-          <li class="dim">Анализ документов</li>
-          <li class="dim">Региональная стратегия</li>
-        </ul>
-        <button class="btn btn-secondary btn-block" onclick="startTest('pricing-free')">Начать тест</button>
+        <div class="pricing-grid-3 stagger">
+          <div class="tier-card">
+            <span class="tier-name">Бесплатно</span>
+            <h3 class="tier-title">Самостоятельно</h3>
+            <div>
+              <div class="tier-price">0 ₽</div>
+              <div class="tier-price-note">Прямо сейчас</div>
+            </div>
+            <ul class="tier-features">
+              <li>Тест на шансы получения</li>
+              <li>Индикативная оценка профиля</li>
+              <li>Общие рекомендации</li>
+              <li class="dim">Анализ документов</li>
+              <li class="dim">Региональная стратегия</li>
+            </ul>
+            <button class="btn btn-secondary btn-block" onclick="startTest('pricing-free')">Начать тест</button>
+          </div>
+
+          <div class="tier-card">
+            <span class="tier-name">Разбор</span>
+            <h3 class="tier-title">Консультация</h3>
+            <div>
+              <div class="tier-price">от 4 900 ₽</div>
+              <div class="tier-price-note">45 минут</div>
+            </div>
+            <ul class="tier-features">
+              <li>Анализ ситуации и документов</li>
+              <li>Оценка шансов на реальных данных</li>
+              <li>Рекомендации по шагам</li>
+              <li>Список документов под регион</li>
+              <li>Ответы на все вопросы</li>
+            </ul>
+            <button class="btn btn-primary btn-block" onclick="openTelegram('tier-1')">Записаться</button>
+          </div>
+
+          <div class="tier-card">
+            <span class="tier-name">Под ключ</span>
+            <h3 class="tier-title">Полное сопровождение</h3>
+            <div>
+              <div class="tier-price">от 29 900 ₽</div>
+              <div class="tier-price-note">До получения средств</div>
+            </div>
+            <ul class="tier-features">
+              <li>Полная подготовка пакета</li>
+              <li>Подача с контролем статуса</li>
+              <li>Коммуникация с комиссией</li>
+              <li>Помощь с отчётностью</li>
+              <li>Поддержка на весь период</li>
+            </ul>
+            <button class="btn btn-secondary btn-block" onclick="openTelegram('tier-3')">Обсудить</button>
+          </div>
+        </div>
       </div>
 
-      <div class="tier-card">
-        <span class="tier-name">Разбор</span>
-        <h3 class="tier-title">Консультация</h3>
-        <div>
-          <div class="tier-price">от 4 900 ₽</div>
-          <div class="tier-price-note">45 минут</div>
+      <div class="pricing-track">
+        <div class="pricing-track-head">
+          <span class="pricing-track-tag pricing-track-tag-amber">Трек 2 · Рекомендую</span>
+          <h3 class="pricing-track-title">Контракт + Запуск под ключ</h3>
+          <p class="pricing-track-sub">Получим деньги — и грамотно стартуем ваш бизнес.</p>
         </div>
-        <ul class="tier-features">
-          <li>Анализ ситуации и документов</li>
-          <li>Ответы на все вопросы</li>
-          <li>Оценка шансов на реальных данных</li>
-          <li>Рекомендации по шагам</li>
-          <li>Список документов под регион</li>
-        </ul>
-        <button class="btn btn-primary btn-block" onclick="openTelegram('tier-1')">Записаться</button>
-      </div>
-
-      <div class="tier-card featured">
-        <span class="tier-badge">Популярный выбор</span>
-        <span class="tier-name">Подготовка</span>
-        <h3 class="tier-title">Консультация + Подготовка</h3>
-        <div>
-          <div class="tier-price">от 14 900 ₽</div>
-          <div class="tier-price-note">Полный пакет подготовки</div>
+        <div class="combo-tier reveal">
+          <div class="combo-tier-inner">
+            <div class="combo-tier-left">
+              <span class="combo-tier-badge">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                Лучший выбор для запуска
+              </span>
+              <h3 class="combo-tier-title">Комбо: Контракт + Запуск</h3>
+              <p class="combo-tier-sub">Полное сопровождение контракта + любая 1 услуга из «Запуск под ключ» + скидка <strong>−40%</strong> на остальные услуги списка.</p>
+              <div class="combo-tier-price">
+                <span class="combo-tier-amount">40 000 ₽</span>
+                <span class="combo-tier-orig">~~99 000 ₽~~ при заказе по отдельности</span>
+              </div>
+              <button class="btn btn-amber btn-lg" onclick="openTelegram('combo-tier')">
+                Обсудить комбо в Telegram
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+              </button>
+            </div>
+            <div class="combo-tier-right">
+              <div class="combo-tier-features-title">Что входит:</div>
+              <ul class="combo-tier-features">
+                <li>Полное сопровождение контракта до получения средств</li>
+                <li>1 услуга на выбор: сайт / реклама / AI / автоматизация / контент</li>
+                <li>Скидка −40% на любые остальные услуги из «Запуск под ключ»</li>
+                <li>Стратегия запуска с разбором юнит-экономики</li>
+                <li>Чат с консультациями весь срок контракта</li>
+                <li>Помощь с отчётностью и закрытием контракта</li>
+              </ul>
+              <div class="combo-tier-roi">
+                <div class="combo-tier-roi-icon">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M23 6l-9.5 9.5-5-5L1 18"/><polyline points="17 6 23 6 23 12"/></svg>
+                </div>
+                <div>
+                  <div class="combo-tier-roi-label">ROI до получения первой выручки</div>
+                  <div class="combo-tier-roi-val">350 000 ₽ / 40 000 ₽ = <strong>×8.75</strong></div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-        <ul class="tier-features">
-          <li>Всё из консультации</li>
-          <li>Помощь с бизнес-планом</li>
-          <li>Проверка и корректура заявки</li>
-          <li>Чек-лист с пояснениями</li>
-          <li>Follow-up после подачи</li>
-          <li>Ответы в чате 2 недели</li>
-        </ul>
-        <button class="btn btn-primary btn-block" onclick="openTelegram('tier-2')">Выбрать</button>
-      </div>
-
-      <div class="tier-card">
-        <span class="tier-name">Под ключ</span>
-        <h3 class="tier-title">Полное сопровождение</h3>
-        <div>
-          <div class="tier-price">от 29 900 ₽</div>
-          <div class="tier-price-note">До получения средств</div>
-        </div>
-        <ul class="tier-features">
-          <li>Всё из предыдущего</li>
-          <li>Полная подготовка пакета</li>
-          <li>Подача с контролем статуса</li>
-          <li>Коммуникация с комиссией</li>
-          <li>Помощь с отчётностью</li>
-          <li>Поддержка на весь период</li>
-        </ul>
-        <button class="btn btn-secondary btn-block" onclick="openTelegram('tier-3')">Обсудить</button>
       </div>
     </div>
+
     <p class="pricing-footer">Не знаете, что вам нужно? Пройдите тест — после результата подскажу подходящий формат.</p>
   </div>
 </section>
@@ -2376,9 +3312,9 @@ footer::before {
 </div>
 
 <script>
-const TELEGRAM_BOT_TOKEN = "PASTE_HERE";
-const TELEGRAM_CHAT_ID = "PASTE_HERE";
-const TELEGRAM_USERNAME = "shanset_bot";
+const TELEGRAM_BOT_TOKEN = "8940258228:AAHeZksb4YdffFx1sv9wJ8D4IJwLGYwHETI";
+const TELEGRAM_CHAT_ID = "407721399";
+const TELEGRAM_USERNAME = "zhbankov_alex";
 
 const REGIONS_A = [
   "Москва","Московская область","Санкт-Петербург","Ленинградская область",
@@ -2436,53 +3372,50 @@ const BUSINESS_OPTIONS = [
 ];
 
 const DIRECTIONS = [
-  { g: 'Занятость и развитие', items: [
-    { id: 'd1',  n: 1,  t: 'Поиск работы и трудоустройство',           p: 10, pr: 'high' },
-    { id: 'd2',  n: 2,  t: 'Профессиональное обучение / переобучение', p: 10, pr: 'high' }
+  { g: 'Технологии и цифра', items: [
+    { id: 'd1',  n: 1,  t: 'IT и технологии',           p: 10, expert: true },
+    { id: 'd9',  n: 9,  t: 'Маркетинг и реклама',       p: 10, expert: true },
+    { id: 'd6',  n: 6,  t: 'Консалтинг',                p: 9,  expert: true }
   ]},
-  { g: 'Личное подсобное хозяйство', items: [
-    { id: 'd3',  n: 3,  t: 'Развитие ЛПХ',           p: 10, pr: 'high' },
-    { id: 'd4',  n: 4,  t: 'Животноводство, птицеводство', p: 10, pr: 'high' },
-    { id: 'd5',  n: 5,  t: 'Пчеловодство',           p: 9,  pr: 'high' },
-    { id: 'd6',  n: 6,  t: 'Тепличное овощеводство', p: 9,  pr: 'high' },
-    { id: 'd7',  n: 7,  t: 'Рыбоводство',            p: 8,  pr: 'medium' }
+  { g: 'Бизнес и финансы', items: [
+    { id: 'd2',  n: 2,  t: 'Финансы и бизнес',          p: 10, expert: true },
+    { id: 'd7',  n: 7,  t: 'Банковская сфера',          p: 8 },
+    { id: 'd8',  n: 8,  t: 'Юриспруденция',             p: 8 },
+    { id: 'd20', n: 20, t: 'Торговля',                  p: 9,  expert: true },
+    { id: 'd21', n: 21, t: 'Управление персоналом',     p: 7 }
   ]},
-  { g: 'Производство и ремёсла', items: [
-    { id: 'd8',  n: 8,  t: 'Деревообработка, столярные работы', p: 8, pr: 'medium' },
-    { id: 'd9',  n: 9,  t: 'Швейное / текстильное производство', p: 8, pr: 'medium' },
-    { id: 'd10', n: 10, t: 'Производство продуктов питания',     p: 8, pr: 'medium' },
-    { id: 'd11', n: 11, t: 'Хэндмейд / ремёсла',                 p: 7, pr: 'medium' }
+  { g: 'Социальная сфера', items: [
+    { id: 'd3',  n: 3,  t: 'Медицина и здравоохранение', p: 9 },
+    { id: 'd4',  n: 4,  t: 'Социальная сфера',           p: 10 },
+    { id: 'd5',  n: 5,  t: 'Образование',                p: 10, expert: true }
   ]},
-  { g: 'Услуги для населения', items: [
-    { id: 'd12', n: 12, t: 'Красота и здоровье',          p: 8,  pr: 'medium' },
-    { id: 'd13', n: 13, t: 'Ремонтные услуги',            p: 8,  pr: 'medium' },
-    { id: 'd14', n: 14, t: 'Услуги по уходу за детьми',   p: 10, pr: 'high' },
-    { id: 'd15', n: 15, t: 'Услуги по уходу за пожилыми', p: 10, pr: 'high' },
-    { id: 'd16', n: 16, t: 'Клининговые услуги',          p: 7,  pr: 'medium' },
-    { id: 'd17', n: 17, t: 'Услуги для животных',         p: 7,  pr: 'medium' }
+  { g: 'Творчество и контент', items: [
+    { id: 'd10', n: 10, t: 'Творчество и дизайн',          p: 9,  expert: true },
+    { id: 'd19', n: 19, t: 'Культура',                     p: 7 },
+    { id: 'd25', n: 25, t: 'Издательское дело',            p: 7 },
+    { id: 'd26', n: 26, t: 'Фото / видео услуги',          p: 8 }
   ]},
-  { g: 'Образование и творчество', items: [
-    { id: 'd18', n: 18, t: 'Репетиторство, обучение', p: 8, pr: 'medium' },
-    { id: 'd19', n: 19, t: 'Музыкальные, творческие услуги', p: 7, pr: 'medium' },
-    { id: 'd20', n: 20, t: 'Фото / видео производство', p: 7, pr: 'medium' }
+  { g: 'Производство и логистика', items: [
+    { id: 'd11', n: 11, t: 'Логистика и транспорт',                          p: 8 },
+    { id: 'd12', n: 12, t: 'Строительство и инженерия',                      p: 9 },
+    { id: 'd13', n: 13, t: 'Производство и переработка',                     p: 9 },
+    { id: 'd24', n: 24, t: 'Техническое обслуживание и ремонт транспорта',   p: 8 }
   ]},
-  { g: 'Технологии и онлайн', items: [
-    { id: 'd21', n: 21, t: 'IT-услуги, разработка, дизайн', p: 7, pr: 'medium' },
-    { id: 'd22', n: 22, t: 'Онлайн-продажи, торговля',      p: 7, pr: 'medium' }
+  { g: 'Сервисы для людей', items: [
+    { id: 'd14', n: 14, t: 'Туризм и гостиничный бизнес',  p: 8 },
+    { id: 'd15', n: 15, t: 'Общественное питание',         p: 9 },
+    { id: 'd18', n: 18, t: 'Сфера красоты',                p: 9 },
+    { id: 'd22', n: 22, t: 'Жилищно-коммунальное хозяйство', p: 7 },
+    { id: 'd23', n: 23, t: 'Бытовые услуги, включая ремонт', p: 8 },
+    { id: 'd27', n: 27, t: 'Организация праздников и мероприятий', p: 8 },
+    { id: 'd28', n: 28, t: 'Спорт и досуг',                p: 8 }
   ]},
-  { g: 'Транспорт', items: [
-    { id: 'd23', n: 23, t: 'Транспорт и доставка', p: 7, pr: 'medium' }
-  ]},
-  { g: 'Сельское хозяйство', items: [
-    { id: 'd24', n: 24, t: 'Растениеводство, фермерство',    p: 9, pr: 'high' },
-    { id: 'd25', n: 25, t: 'Переработка сельхозпродукции',   p: 8, pr: 'medium' }
-  ]},
-  { g: 'Туризм и услуги', items: [
-    { id: 'd26', n: 26, t: 'Туризм, гиды, экскурсии',  p: 6, pr: 'lower' },
-    { id: 'd27', n: 27, t: 'Прокат оборудования',      p: 6, pr: 'lower' },
-    { id: 'd28', n: 28, t: 'Не определился — нужна помощь', p: 5, pr: 'lower', flag: 'NEEDS_DIRECTION_SELECTION' }
+  { g: 'Природа и экология', items: [
+    { id: 'd16', n: 16, t: 'Сельское хозяйство',           p: 10 },
+    { id: 'd17', n: 17, t: 'Экология и охрана природы',    p: 8 }
   ]}
 ];
+const EXPERT_CATEGORIES = ['d1','d2','d5','d6','d9','d10','d20'];
 
 const COMPLICATIONS = [
   { id: 'c1', title: 'Налоговые долги', sub: 'Задолженность перед ФНС', modifier: -3, flag: 'TAX_DEBT' },
@@ -2503,8 +3436,12 @@ const REPORTING_OPTIONS = [
 ];
 
 const FAQS = [
+  { q: 'Что такое «комбо» и почему 40 000 ₽?',
+    a: 'Комбо — это полное сопровождение контракта плюс одна услуга на запуск бизнеса (сайт, реклама, AI-агент, автоматизация или контент). Плюс скидка −40% на любые остальные услуги из «Запуск под ключ».\n\nЦена 40 000 ₽ вместо ~99 000 ₽ при заказе по отдельности. Это сознательно низкая цена — потому что мой основной интерес: чтобы вы получили контракт и грамотно стартовали, а не просто заплатили мне за консультацию.\n\nПолучив 350 000 ₽ от государства, вы инвестируете 40 000 ₽ в инструменты запуска — и шансы дойти до первой выручки в разы выше.' },
   { q: 'У меня долги или исполнительное производство. Откажут?',
-    a: 'Нет автоматического отказа. Долги — это фактор, который учитывается при оценке, а не запрет. У меня самого было исполнительное производство на 1,4 млн рублей — и я получил социальный контракт.\n\nВажнее то, как оформлена заявка. Именно здесь я помогаю: подготовить документы так, чтобы сложности не стали основанием для отказа.' },
+    a: 'Нет автоматического отказа. Долги — это фактор, который учитывается при оценке, а не запрет. У меня самого было исполнительное производство на 1,4 млн рублей — и я получил социальный контракт (на 349 794 ₽, документы есть в разделе «Доказательство» выше).\n\nВажнее то, как оформлена заявка. Именно здесь я помогаю: подготовить документы так, чтобы сложности не стали основанием для отказа.' },
+  { q: 'Если я закажу комбо — обязательно использовать вашу услугу запуска?',
+    a: 'Нет. Услуга на запуск входит в пакет, но если вы хотите потратить контрактные средства на оборудование — это ваше право, я не диктую направление.\n\nКомбо просто даёт вам инструмент: если вы решите, что нужен сайт, реклама или автоматизация — я делаю это сам и со скидкой. Если нет — мы используем комбо только в части сопровождения контракта.' },
   { q: 'Я работаю / моя ситуация нестандартная — мне это подходит?',
     a: 'Программа распространяется не только на безработных. Трудоустроенные с низким доходом, самозанятые, ИП — все эти категории могут подать заявку.\n\nПройдите тест — это быстрее, чем читать официальные описания программы.' },
   { q: 'Зачем платить за консультацию — если программа государственная?',
@@ -2677,12 +3614,13 @@ function buildDirectionsGrid() {
   let html = '';
   DIRECTIONS.forEach(group => {
     group.items.forEach(item => {
+      const isExpert = item.expert === true;
       html += `
-        <div class="dir-cat">
+        <div class="dir-cat ${isExpert ? 'expert' : ''}">
           <span class="dir-cat-num">${item.n}</span>
           <div class="dir-cat-text">
             ${item.t}
-            <div><span class="dir-priority ${item.pr}">${item.pr === 'high' ? 'Приоритет' : item.pr === 'medium' ? 'Средний' : 'Базовый'}</span></div>
+            ${isExpert ? `<span class="dir-expert-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Запуск со мной</span>` : ''}
           </div>
         </div>`;
     });
