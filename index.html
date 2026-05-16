@@ -786,7 +786,7 @@ header.nav.scrolled {
 @media (max-width: 539px) {
   .hero { padding: 20px 0 48px; }
   .hero .section-eyebrow { margin-bottom: 12px; }
-  .hero h1 { margin-bottom: 12px; font-size: 2.25rem; line-height: 1.15; }
+  .hero h1 { margin-bottom: 12px; }
   .hero-sub { margin-bottom: 16px; font-size: 1rem; line-height: 1.4; }
   .hero-combo-pills { margin-bottom: 16px; }
   .combo-pill { padding: 4px 10px; font-size: 0.75rem; }
@@ -3567,10 +3567,8 @@ function getABVariant() {
   try {
     const urlOverride = new URLSearchParams(location.search).get('ab');
     if (urlOverride === 'A' || urlOverride === 'B') return urlOverride;
-    let v = localStorage.getItem('ab_hero');
-    if (!v) { v = Math.random() < 0.5 ? 'A' : 'B'; localStorage.setItem('ab_hero', v); }
-    return v;
-  } catch (e) { return 'A'; }
+    return 'B';
+  } catch (e) { return 'B'; }
 }
 function applyABVariant() {
   const variant = getABVariant();
