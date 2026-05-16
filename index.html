@@ -777,12 +777,17 @@ header.nav.scrolled {
 .hero {
   background: #0F1832;
   color: white;
-  padding: 88px 0 96px;
+  padding: 48px 0 64px;
   position: relative;
   overflow: hidden;
   isolation: isolate;
 }
 @media (min-width: 768px) { .hero { padding: 128px 0 144px; } }
+@media (max-width: 539px) {
+  .hero h1 { margin-bottom: 16px; }
+  .hero-sub { margin-bottom: 20px; }
+  .hero-combo-pills { margin-bottom: 16px; }
+}
 .hero::before {
   content: '';
   position: absolute;
