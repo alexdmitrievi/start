@@ -1876,8 +1876,7 @@ header.nav.scrolled {
   position: relative;
 }
 .dir-cat:hover { border-color: var(--primary); background: var(--primary-tint); transform: translateY(-2px); box-shadow: var(--shadow-sm); }
-.dir-cat.expert { border-color: rgba(245, 158, 11, 0.32); background: var(--amber-tint); }
-.dir-cat.expert:hover { border-color: var(--amber); box-shadow: 0 4px 16px -4px rgba(245, 158, 11, 0.25); }
+
 .dir-cat-header {
   display: flex;
   align-items: flex-start;
@@ -1913,7 +1912,7 @@ header.nav.scrolled {
   font-family: 'Plus Jakarta Sans';
   line-height: 1;
 }
-.dir-cat.expert .dir-cat-num { background: var(--amber-soft); color: var(--amber-dark); }
+
 .dir-cat-text { flex: 1; line-height: 1.35; padding-top: 5px; }
 .dir-expert-badge {
   display: inline-flex;
@@ -3898,7 +3897,7 @@ function buildDirectionsGrid() {
     group.items.forEach(item => {
       const isExpert = item.expert === true;
       html += `
-        <div class="dir-cat ${isExpert ? 'expert' : ''}">
+        <div class="dir-cat">
           <div class="dir-cat-header">
             <span class="dir-cat-num">${item.n}</span>
             <span class="dir-cat-text">${item.t}</span>
